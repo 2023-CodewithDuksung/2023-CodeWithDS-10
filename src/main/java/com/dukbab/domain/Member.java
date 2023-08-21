@@ -1,0 +1,51 @@
+package com.dukbab.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Table(name="Member")
+@Getter
+@Setter
+public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "memberId")
+    private int id;
+
+    @Column(length = 100)
+    private String nickname; // 닉네임
+
+    @Column(unique = true, nullable = false, length = 100)
+    private String email; // 이메일
+
+    @Column(length = 100, nullable = false)
+    private String password; // 비밀번호
+
+    @Column(length = 100)
+    private String phone; // 전화번호
+
+    @Enumerated(EnumType.STRING)
+    private Role role; // 역할(사용자, 가게주인)
+
+    @Column(length = 300)
+    private String currentAddress; // 현위치
+
+    private Date createdDate; // 생성 날짜 - 이거 빼도 되지 않을까요??
+
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) // 양방향 관계
+    private List<Order> orders = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member") // 양방향 관계
+    private List<Cart> carts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member") // 양방향 관계
+    private List<Review> reviews = new ArrayList<>();
+
+}
