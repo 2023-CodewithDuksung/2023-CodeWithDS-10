@@ -1,7 +1,6 @@
 package com.dukbab.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,6 +11,8 @@ import java.util.List;
 @Table(name="Member")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Member {
 
     @Id
@@ -47,5 +48,15 @@ public class Member {
 
     @OneToMany(mappedBy = "member") // 양방향 관계
     private List<Review> reviews = new ArrayList<>();
+
+    // 테스트 코드
+    public Member(String nickname, String email, String password, String phone, String currentAddress, Date createdDate){
+        this.nickname = nickname;
+        this.email = email;
+        this.password =password;
+        this.phone = phone;
+        this.currentAddress = currentAddress;
+        this.createdDate = createdDate;
+    }
 
 }

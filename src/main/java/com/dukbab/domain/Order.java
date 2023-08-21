@@ -1,6 +1,7 @@
 package com.dukbab.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,9 +10,10 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="Order")
+@Table(name="OrderTable")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Order {
 
     @Id
