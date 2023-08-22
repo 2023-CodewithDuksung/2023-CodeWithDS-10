@@ -16,6 +16,7 @@ import java.time.LocalTime;
 @Transactional
 public class DataInitializer implements ApplicationRunner {
 
+    // 오류 수정 test
     private final MenuRepository menuRepository;
     private final StoreRepository storeRepository;
 
