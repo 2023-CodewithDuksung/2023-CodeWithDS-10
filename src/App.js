@@ -1,4 +1,4 @@
-import Tab from "./MenuList/Tab.js";
+import Tab from "./Menu/Tab.js";
 import Header from './Header/Header.js';
 import Detail from './MenuDetail/Detail.js';
 import MyPage from "./MyPage/MyPage.js";
