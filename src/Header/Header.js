@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 export default function Header() {
     return(
         <div className='Container'>
-            <div className='HookArea'>
+            <div className='HeaderArea'>
                 <div className='TopArea'>
                     <div className='TopWrap'>
                         <div className='Title'>
