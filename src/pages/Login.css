@@ -1,0 +1,70 @@
+/* 로그인 */
+
+.logo_img {
+  display: block;
+  top: 266px;
+  margin-left: 76px;
+  width: 379px;
+  height: 101px;
+}
+
+.id_img {
+  width: 44px;
+  height: 44px;
+  vertical-align: middle;
+  margin-right: 1px;
+}
+
+.pwd_img {
+  width: 44px;
+  height: 44px;
+  vertical-align: middle;
+  margin-right: 1px;
+}
+
+.input_1 {
+  position: relative;
+  width: 447px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.input_2 {
+  width: 447px;
+  height: 40px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.login_button {
+  display: block;
+  width: 500px;
+  height: 40px;
+
+  background: var(--unnamed-color-b34d5f) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--unnamed-color-707070);
+  background: #b34d5f 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+
+  font: normal normal normal 25px/42px Malgun Gothic;
+
+  color: white;
+}
+
+.signup_button {
+  width: 500px;
+  height: 40px;
+  margin-top: 10px;
+
+  /* UI Properties */
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--unnamed-color-707070);
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+
+  font: normal normal normal 25px/42px Malgun Gothic;
+
+  color: #b34d5f;
+}
