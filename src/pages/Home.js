@@ -1,13 +1,13 @@
 import React from "react";
 import { useUserState } from "../UserContext";
-import Header from "./Header";
+import Headers from "../Headers/Headers";
 
 const Home = () => {
   const { user } = useUserState();
 
   return (
     <div>
-      <Header />
+      <Headers />
       <h1>{user.userId}님 </h1>
     </div>
   );

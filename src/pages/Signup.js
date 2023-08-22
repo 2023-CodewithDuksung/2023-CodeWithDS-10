@@ -9,6 +9,9 @@ import so_img from "../img/siren_orduk.jpg";
 import name from "../img/name.jpg";
 import mail from "../img/mail.jpg";
 
+//백연결
+import axios from "axios";
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [id, onChangeId, setId] = useInput("");
@@ -91,7 +94,7 @@ const SignUp = () => {
 
   const onSignUp = () => {
     alert("회원 가입 완료");
-    navigate("/login");
+    navigate("/");
     onReset();
 
     dispatch({
