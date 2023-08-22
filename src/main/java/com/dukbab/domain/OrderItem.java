@@ -16,17 +16,17 @@ public class OrderItem {
     @Column(name = "orderItem_id")
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="menuId")
-    private Menu menu;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="menuId")
+//    private Menu menu;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="orderId")
     private Order order;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="storeId")
-    private Store store;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="storeId")
+//    private Store store;
 
     private int orderItemCnt; // 주문 메뉴 수량
 

@@ -6,11 +6,14 @@ spring:
     password: 1234
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update  # create-drop 시 db를 자동으로 생성해 줌.
     properties:
       hibernate:
         format_sql: true
         show_sql: true
+
+jwt:
+  secret: ZHVrYmFiU2VjcmV0S2V5ZHVrYmFiU2VjcmV0S2V5ZHVrYmFiU2VjcmV0S2V5ZHVrYmFiU2VjcmV0S2V5ZHVrYmFiU2VjcmV0S2V5
 
 
 #    spring.jpa.hibernate.ddl-auto=update

@@ -21,13 +21,13 @@ public class Review {
     @JoinColumn(name="memberId")
     private Member member;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="storeId")
-    private Store store;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="storeId")
+//    private Store store;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="menuId")
-    private Menu menu;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="menuId")
+//    private Menu menu;
 
     private double rating; // 별점
 

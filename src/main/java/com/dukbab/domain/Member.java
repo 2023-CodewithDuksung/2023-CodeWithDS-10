@@ -13,6 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Member {
 
     @Id
@@ -43,8 +44,8 @@ public class Member {
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) // 양방향 관계
     private List<Order> orders = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member") // 양방향 관계
-    private List<Cart> carts = new ArrayList<>();
+//    @OneToMany(mappedBy = "member") // 양방향 관계
+//    private List<Cart> carts = new ArrayList<>();
 
     @OneToMany(mappedBy = "member") // 양방향 관계
     private List<Review> reviews = new ArrayList<>();
@@ -58,5 +59,23 @@ public class Member {
         this.currentAddress = currentAddress;
         this.createdDate = createdDate;
     }
+
+    public void setNickname(String nickname){
+        this.nickname = nickname;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
+    @Builder
+    public Member(int id, String nickname, String email, String password,  Role role){
+        this.id = id;
+        this.nickname = nickname;
+        this.email = email;
+        this.password = password;
+        this.role= role;
+    }
+
 
 }
