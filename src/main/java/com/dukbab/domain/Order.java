@@ -39,7 +39,7 @@ public class Order {
     private int waitingNumber; // 대기 번호
 
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계 주문이 삭제되면 주문 아이템들도 삭제되게.
-    private List<OrderItem> orderItems = new ArrayList<>();
+    private List<OrderItem> orderitems = new ArrayList<>();
 
     // 테스트 코드
     public Order(Member member, String paymentMethod, int totalPrice, Date createdDate, int cookingTime, int waitingNumber){

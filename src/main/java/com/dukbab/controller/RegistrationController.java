@@ -63,7 +63,7 @@ public class RegistrationController {
         OrderItem orderItem = new OrderItem(menuRepository.findById(2).get(), orderRepository.findById(2).get(), menuRepository.findById(2).get().getStore(), 3, 6000);
         orderItemRepository.save(orderItem);
         orderItem.getMenu().getOrderItems().add(orderItem);
-        orderItem.getOrder().getOrderItems().add(orderItem);
+        orderItem.getOrder().getOrderitems().add(orderItem);
         orderItem.getStore().getOrderItems().add(orderItem);
         return orderItem;
     }

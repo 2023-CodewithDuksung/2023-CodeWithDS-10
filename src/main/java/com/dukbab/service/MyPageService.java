@@ -30,7 +30,7 @@ public class MyPageService {
         List<OrderItemDto> orderItemDtoList = new ArrayList<>();
         List<OrderDataDto> orderDataDtoList = new ArrayList<>();
         for(Order order: member.getOrders()){
-            for(OrderItem orderItem: order.getOrderItems()){
+            for(OrderItem orderItem: order.getOrderitems()){
                 OrderItemDto orderItemDto = OrderItemDto.builder()
                         .menuName(orderItem.getMenu().getName())
                         .orderItemCnt(orderItem.getOrderItemCnt())
