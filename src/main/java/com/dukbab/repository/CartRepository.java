@@ -1,0 +1,7 @@
+package com.dukbab.repository;
+
+import com.dukbab.domain.Cart;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CartRepository extends JpaRepository<Cart, Integer> {
+}
