@@ -1,6 +1,7 @@
 package com.dukbab.controller;
 
-import com.dukbab.domain.Member;
+import com.dukbab.domain.*;
+import com.dukbab.repository.*;
 import com.dukbab.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
+// 테스트 코드
 @Slf4j
 @RequestMapping("/api")
 @RestController
@@ -17,6 +19,12 @@ import java.util.Date;
 public class RegistrationController {
 
     private final MemberService memberService;
+    private final StoreRepository storeRepository;
+    private final MenuRepository menuRepository;
+    private final MemberRepository memberRepository;
+    private final OrderRepository orderRepository;
+
+    private final OrderItemRepository orderItemRepository;
 
     // 테스트 코드
     @GetMapping("/insert")
@@ -25,6 +33,41 @@ public class RegistrationController {
         memberService.save(member);
         return member;
     }
+
+
+    @GetMapping("/store/insert")
+    public Store storeInsert(){
+        Store store = new Store(isOpen.OPEN, "13:00", "sdfljogr", 2);
+        storeRepository.save(store);
+        return store;
+    }
+
+    @GetMapping("/menu/insert")
+    public Menu menuInsert() {
+        Menu menu = new Menu(storeRepository.findById(1).get(), menuStatus.SELL, "탕수육", "imageurl", 3000, "단백질", "돼지고기", 15, 4.8, "맛있는 탕수육입니다.", 1);
+        menuRepository.save(menu);
+        menu.getStore().getMenus().add(menu);
+        return menu;
+    }
+
+    @GetMapping("/order/insert")
+    public Order orderInsert() {
+        Order order = new Order(memberRepository.findById(5).get(), "카드", 55000, new Date(), 20, 754);
+        orderRepository.save(order);
+        order.getMember().getOrders().add(order);
+        return order;
+    }
+
+    @GetMapping("/orderItem/insert")
+    public OrderItem orderItemInsert(){
+        OrderItem orderItem = new OrderItem(menuRepository.findById(2).get(), orderRepository.findById(2).get(), menuRepository.findById(2).get().getStore(), 3, 6000);
+        orderItemRepository.save(orderItem);
+        orderItem.getMenu().getOrderItems().add(orderItem);
+        orderItem.getOrder().getOrderItems().add(orderItem);
+        orderItem.getStore().getOrderItems().add(orderItem);
+        return orderItem;
+    }
+
 
 
 }

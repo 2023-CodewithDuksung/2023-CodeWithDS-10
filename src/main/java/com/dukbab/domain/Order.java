@@ -1,5 +1,6 @@
 package com.dukbab.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,6 +24,7 @@ public class Order {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="memberId")
+    @JsonIgnore
     private Member member;
 
     @Column(length = 100)
@@ -38,5 +40,15 @@ public class Order {
 
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계 주문이 삭제되면 주문 아이템들도 삭제되게.
     private List<OrderItem> orderItems = new ArrayList<>();
+
+    // 테스트 코드
+    public Order(Member member, String paymentMethod, int totalPrice, Date createdDate, int cookingTime, int waitingNumber){
+        this.member = member;
+        this.paymentMethod = paymentMethod;
+        this.totalPrice = totalPrice;
+        this.createdDate = createdDate;
+        this.cookingTime = cookingTime;
+        this.waitingNumber = waitingNumber;
+    }
 
 }

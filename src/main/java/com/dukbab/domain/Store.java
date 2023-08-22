@@ -37,4 +37,12 @@ public class Store {
     @OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<Menu> menus = new ArrayList<>();
 
+    // 테스트 코드
+    public Store(isOpen isOpen, String operationHours, String authenticationKey, int congestion){
+        this.isOpen = isOpen;
+        this.operationHours = operationHours;
+        this.authenticationKey = authenticationKey;
+        this.congestion = congestion;
+    }
+
 }

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class MemberResponseDto {
-    // Response를 보낼 때 쓰이는 dto
+    // 회원가입 로그인 관련 Response를 보낼 때 쓰이는 dto
     private String email;
     private String nickname;
 

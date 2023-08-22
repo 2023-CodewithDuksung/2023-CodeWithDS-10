@@ -3,21 +3,31 @@ package com.dukbab.controller;
 import com.dukbab.dto.ChangePasswordRequestDto;
 import com.dukbab.dto.MemberRequestDto;
 import com.dukbab.dto.MemberResponseDto;
+import com.dukbab.dto.MyPageDto;
 import com.dukbab.service.MemberService;
+import com.dukbab.service.MyPageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api")
+@RequestMapping("/api/mypage")
 public class MemberController {
     private final MemberService memberService;
-    @GetMapping("/members")
-    public ResponseEntity<MemberResponseDto> getMyMemberInfo(){
-        MemberResponseDto myInfoBySecurity = memberService.getMyInfoBySecurity();
-        System.out.println(myInfoBySecurity.getNickname());
-        return ResponseEntity.ok(myInfoBySecurity);
+
+    private final MyPageService myPageService;
+
+//    @GetMapping("")
+//    public ResponseEntity<MemberResponseDto> getMyMemberInfo(){
+//        MemberResponseDto myInfoBySecurity = memberService.getMyInfoBySecurity();
+//        System.out.println(myInfoBySecurity.getNickname());
+//        return ResponseEntity.ok(myInfoBySecurity);
+//    }
+
+    @GetMapping("")
+    public ResponseEntity<MyPageDto> getMypageData(){
+        return ResponseEntity.ok(myPageService.getMyPageData());
     }
 
     @PutMapping("/nicknameUpdate")

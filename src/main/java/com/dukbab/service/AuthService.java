@@ -2,6 +2,7 @@ package com.dukbab.service;
 
 import antlr.Token;
 import com.dukbab.domain.Member;
+import com.dukbab.dto.EmailCheckDto;
 import com.dukbab.dto.MemberRequestDto;
 import com.dukbab.dto.MemberResponseDto;
 import com.dukbab.dto.TokenDto;
@@ -36,6 +37,10 @@ public class AuthService {
         UsernamePasswordAuthenticationToken authenticationToken = requestDto.toAuthentication();
         Authentication authentication = managerBuilder.getObject().authenticate(authenticationToken);
         return tokenProvider.generateTokenDto(authentication);
+    }
+
+    public boolean emailCheck(EmailCheckDto emailCheckDto){
+        return memberRepository.existsByEmail(emailCheckDto.getEmail());
     }
 
 }
