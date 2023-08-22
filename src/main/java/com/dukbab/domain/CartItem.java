@@ -3,7 +3,6 @@ package com.dukbab.domain;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.awt.*;
 
@@ -13,6 +12,7 @@ import java.awt.*;
 @Setter
 public class CartItem {
 
+  
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name="cartItemId")
@@ -27,5 +27,6 @@ public class CartItem {
     private Menu menu;      // 메뉴 id
 
     private int menuCnt;    // 각 메뉴 수량
+
 
 }

@@ -37,4 +37,6 @@ public class Store {
     @OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<Menu> menus = new ArrayList<>();
 
+  
 }
+

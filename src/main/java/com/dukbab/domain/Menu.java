@@ -31,6 +31,7 @@ public class Menu {
 
     private String imageUrl;    // 메뉴 이미지 URL
 
+
     private int price;  // 메뉴 가격
 
     private String originIng;   // 원산지 성분
@@ -57,7 +58,5 @@ public class Menu {
 
 
 
-
-
-
 }
+
