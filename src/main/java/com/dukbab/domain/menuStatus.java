@@ -1,2 +1,5 @@
-package com.dukbab.domain;public enum Status {
+package com.dukbab.domain;
+
+public enum menuStatus {
+    SELL, SOLD_OUT
 }

@@ -28,6 +28,4 @@ public class CartItem {
 
     private int menuCnt;    // 각 메뉴 수량
 
-
-
 }

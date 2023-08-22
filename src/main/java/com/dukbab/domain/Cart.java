@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="Cart")
@@ -27,6 +29,7 @@ public class Cart {
 
     private int totalCnt;   // 총 수량
 
-
+    @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
+    private List<Cart> cartItems = new ArrayList<>();
 
 }
