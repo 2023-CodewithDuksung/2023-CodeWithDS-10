@@ -1,5 +1,5 @@
 import Tab from "./MenuList/Tab.js";
-import Hook from './Hook/Hook.js';
+import Header from './Header/Header.js';
 import Detail from './MenuDetail/Detail.js';
 import MyPage from "./MyPage/MyPage.js";
 import Cart from "./Cart/Cart.js";
@@ -13,7 +13,7 @@ function App() {
 
   return (
         <BrowserRouter>
-          <Hook/>
+          <Header/>
           <Routes>
             <Route path = '/menu' element={<Tab/>}/>
             <Route path = {'/menu/:id'} element={<Detail menus={menus}/>}/>
