@@ -54,7 +54,7 @@ public class Member {
     public Member(String nickname, String email, String password, String phone, String currentAddress, Date createdDate){
         this.nickname = nickname;
         this.email = email;
-        this.password =password;
+        this.password = password;
         this.phone = phone;
         this.currentAddress = currentAddress;
         this.createdDate = createdDate;
