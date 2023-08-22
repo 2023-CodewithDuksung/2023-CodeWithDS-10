@@ -1,25 +1,29 @@
-import menu from '.';
+import menu from '../MenuList.js';
 import React, { useState } from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "./AllMenu.css";
 
 
-  function AllMenu() {
+  function AllMenu(props) {
+    const navigate = useNavigate();
+
+    const onClickMenuItem =  () => {
+      navigate(`/menu/${props.title}`, {
+        state: props
+      })
+    }
+
     return (
       <div className='all_list'>
         <ul className='all_wrap'>
-          {menu.map((m,index) => (
+          {menu.results.map((item, index) => (
             <li className='menuData'>
-              <React.Fragment key={m.id}>
-                <Link to={`/menu/${m.id}`}>
                   <dl>
                     <dt>
-                        <img src={m.img} alt={m.category+index} width='350px' height='300px'></img>
+                        <img src={item.props.img} alt={item.props.id} width='350px' height='300px' onClick={onClickMenuItem}/>
                     </dt>
-                    <dd>{m.title}</dd>
+                    <dd>{item.props.title}</dd>
                   </dl>
-                </Link>
-              </React.Fragment>
             </li>
           ))}
         </ul>

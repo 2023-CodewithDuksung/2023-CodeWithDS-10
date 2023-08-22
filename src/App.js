@@ -9,14 +9,12 @@ import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  let [menus, setMenus] = useState(menu);
-
   return (
         <BrowserRouter>
           <Header/>
           <Routes>
             <Route path = '/menu' element={<Tab/>}/>
-            <Route path = {'/menu/:id'} element={<Detail menus={menus}/>}/>
+            <Route path = {'/menu/:title'} element={<Detail/>}/>
             <Route path = '/mypage' element={<MyPage/>}/>
             <Route path = '/cart' element={<Cart/>}/>
             <Route path = '/review' element={<Review/>}/>

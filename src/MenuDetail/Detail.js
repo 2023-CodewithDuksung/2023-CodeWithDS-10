@@ -6,11 +6,15 @@ import image2 from '../img/item-2.jpg'
 import image3 from '../img/item-3.jpg'
 import star from '../img/star.jpg';
 import btn_review from '../img/btn_reviewlist.jpg';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 function Detail(props) {      
 
-    let {id} = useParams;
+    const {title} = useParams();
+    const {state} = useLocation();
+
+    console.log(title);
+    console.log(state);
 
     return (
     <div className='detail_container'>
