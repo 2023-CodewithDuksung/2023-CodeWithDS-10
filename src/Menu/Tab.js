@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import AllMenu from './AllMenu.js';
-import SchoolMenu from './SchoolMenu.js';
-import Soldout from './Soldout.js';
+import Toast from './Toast.js';
+import Sandwich from './Sandwich';
+import FoodRamen from './Ramen';
+import Rice from './Rice.js';
+import TodayMenu from './TodayMenu.js';
+import Pasta from './Pasta.js';
 import styled from 'styled-components';
 
 // Styled-Component 라이브러리를 활용해 TabMenu 와 Desc 컴포넌트의 CSS를 구현.
@@ -42,13 +46,13 @@ export default function Tab(){
 
   const menuArr = [
     { name: '전체' , content: <AllMenu/>},
-    { name: '오늘의 메뉴', content: <SchoolMenu/>},
-    { name: '파스타치요', content: <SchoolMenu/>},
-    { name: '니나노덮밥', content: <SchoolMenu/>},
-    { name: '일식/양식', content: <SchoolMenu/>},
-    { name: '샌드위치카페', content: <SchoolMenu/>},
-    { name: '토스트', content: <SchoolMenu/>},
-    { name: '품절', content: <Soldout/>}
+    { name: '오늘의 메뉴', content: <TodayMenu/>},
+    { name: '파스타치요', content: <Pasta/>},
+    { name: '니나노덮밥', content: <Rice/>},
+    { name: '일식/양식', content: <FoodRamen/>},
+    { name: '샌드위치카페', content: <Sandwich/>},
+    { name: '토스트', content: <Toast/>},
+
   ];
 
   const selectMenuHandler = (index) => {
