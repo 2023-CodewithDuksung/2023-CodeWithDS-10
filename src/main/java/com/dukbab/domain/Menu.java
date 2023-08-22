@@ -1,18 +1,18 @@
 package com.dukbab.domain;
 
 import ch.qos.logback.core.status.Status;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
 @Table(name="Menu")
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class Menu {
 
@@ -39,7 +39,7 @@ public class Menu {
 
     private int time;   // 소요 시간
 
-    private double avgRating;  // 메뉴 평점
+    private double rating;  // 메뉴 평점
 
     private String content; // 메뉴 소개
 

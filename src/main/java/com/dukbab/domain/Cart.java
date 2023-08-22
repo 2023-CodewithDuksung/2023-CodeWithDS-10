@@ -19,7 +19,7 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="cartId")
-    private int id;
+    private int cartId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="memberId")
@@ -30,6 +30,6 @@ public class Cart {
     private int totalCnt;   // 총 수량
 
     @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
-    private List<Cart> cartItems = new ArrayList<>();
+    private List<CartItem> cartItems = new ArrayList<>();
 
 }
