@@ -6,11 +6,14 @@ import com.dukbab.dto.MemberResponseDto;
 import com.dukbab.dto.TokenDto;
 import com.dukbab.service.AuthService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api")
@@ -34,6 +37,12 @@ public class AuthController {
             return ResponseEntity.ok("이미 가입되어 있는 유저입니다");
         }
         return ResponseEntity.ok("이메일이 확인되었습니다.");
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(HttpServletRequest request){
+        authService.logout(request);
+        return ResponseEntity.status(HttpStatus.OK).body("로그아웃되었습니다.");
     }
 
 }

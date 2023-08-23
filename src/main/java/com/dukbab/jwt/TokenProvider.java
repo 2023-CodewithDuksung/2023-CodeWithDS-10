@@ -16,9 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -28,6 +26,9 @@ public class TokenProvider {
     private static final String BEARER_TYPE = "bearer";
     private static final long ACCESS_TOKEN_EXPIRE_TIME = 1000 * 60 * 30;
     private final Key key;
+
+    // 로그아웃
+    private Set<String> blacklistedTokens = new HashSet<>(); // 블랙리스트 저장
 
     public TokenProvider(@Value("${jwt.secret}") String secretKey){
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
@@ -77,6 +78,10 @@ public class TokenProvider {
     }
 
     public boolean validateToken(String token){
+        if(isBlacklisted(token)){
+            log.info("로그아웃 처리된 JWT 토큰입니다.");
+            return false;
+        }
         try{
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
             return true;
@@ -99,6 +104,15 @@ public class TokenProvider {
         }catch (ExpiredJwtException e){
             return e.getClaims();
         }
+    }
+
+    // 로그아웃
+    public void addToBlacklist(String token){
+        blacklistedTokens.add(token);
+    }
+
+    public boolean isBlacklisted(String token){
+        return blacklistedTokens.contains(token);
     }
 
 }
