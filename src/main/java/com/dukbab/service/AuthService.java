@@ -16,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -41,6 +43,15 @@ public class AuthService {
 
     public boolean emailCheck(EmailCheckDto emailCheckDto){
         return memberRepository.existsByEmail(emailCheckDto.getEmail());
+    }
+
+    public void logout(HttpServletRequest request){
+        // accessToken redisTemplate 블랙리스트 추가
+        String jwt = request.getHeader("Authorization").substring(7);
+        if(jwt != null){
+            tokenProvider.addToBlacklist(jwt);
+        }
+
     }
 
 }
