@@ -27,4 +27,7 @@ public class MenuController {
     public List<MenuDTO> getMenuDetail(@PathVariable int menuId) {
         return menuService.getDetailMenuDTOs(menuId);
     }
+
+
+
 }
