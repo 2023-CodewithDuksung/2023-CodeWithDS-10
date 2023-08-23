@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @NoArgsConstructor
 @Builder
 public class MemberRequestDto {
-    // Request를 받을 때 쓰이는 dto
+    // 회원가입 관련 Request를 받을 때 쓰이는 dto
     private String email;
     private String password;
     private String nickname;

@@ -42,12 +42,15 @@ public class Member {
     private Date createdDate; // 생성 날짜 - 이거 빼도 되지 않을까요??
 
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) // 양방향 관계
+    @Builder.Default
     private List<Order> orders = new ArrayList<>();
 
-//    @OneToMany(mappedBy = "member") // 양방향 관계
-//    private List<Cart> carts = new ArrayList<>();
+    @OneToMany(mappedBy = "member") // 양방향 관계
+    @Builder.Default
+    private List<Cart> carts = new ArrayList<>();
 
     @OneToMany(mappedBy = "member") // 양방향 관계
+    @Builder.Default
     private List<Review> reviews = new ArrayList<>();
 
     // 테스트 코드
@@ -68,14 +71,14 @@ public class Member {
         this.password = password;
     }
 
-    @Builder
-    public Member(int id, String nickname, String email, String password,  Role role){
-        this.id = id;
-        this.nickname = nickname;
-        this.email = email;
-        this.password = password;
-        this.role= role;
-    }
+//    @Builder
+//    public Member(int id, String nickname, String email, String password,  Role role){
+//        this.id = id;
+//        this.nickname = nickname;
+//        this.email = email;
+//        this.password = password;
+//        this.role= role;
+//    }
 
 
 }

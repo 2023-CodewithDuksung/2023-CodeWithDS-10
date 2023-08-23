@@ -1,5 +1,6 @@
 package com.dukbab.controller;
 
+import com.dukbab.dto.EmailCheckDto;
 import com.dukbab.dto.MemberRequestDto;
 import com.dukbab.dto.MemberResponseDto;
 import com.dukbab.dto.TokenDto;
@@ -23,8 +24,16 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-        public ResponseEntity<TokenDto> login(@RequestBody MemberRequestDto requestDto){
+    public ResponseEntity<TokenDto> login(@RequestBody MemberRequestDto requestDto){
         return ResponseEntity.ok(authService.login(requestDto));
+    }
+
+    @PostMapping("/signup/email-check")
+    public ResponseEntity<?> emailCheck(@RequestBody EmailCheckDto emailCheckDto){
+        if(authService.emailCheck(emailCheckDto)){
+            return ResponseEntity.ok("이미 가입되어 있는 유저입니다");
+        }
+        return ResponseEntity.ok("이메일이 확인되었습니다.");
     }
 
 }
