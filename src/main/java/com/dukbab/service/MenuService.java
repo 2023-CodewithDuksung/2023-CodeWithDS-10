@@ -76,4 +76,9 @@ public class MenuService {
         menuRepository.deleteById(menuId);
     }
 
+    public Menu findMenuByName(String name){
+        return menuRepository.findByName(name)
+                .orElseThrow(() -> new RuntimeException("찾는 메뉴가 없습니다: " + name));
+    }
+
 }

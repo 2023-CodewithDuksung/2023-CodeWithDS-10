@@ -27,9 +27,9 @@ public class MyPageService {
     public MyPageDto getMyPageData(){
         Member member = memberRepository.findById(SecurityUtil.getCurrentMemberId()).orElseThrow(()-> new RuntimeException("로그인 유저 정보가 없습니다."));
 
-        List<OrderItemDto> orderItemDtoList = new ArrayList<>();
         List<OrderDataDto> orderDataDtoList = new ArrayList<>();
         for(Order order: member.getOrders()){
+            List<OrderItemDto> orderItemDtoList = new ArrayList<>();
             for(OrderItem orderItem: order.getOrderitems()){
                 OrderItemDto orderItemDto = OrderItemDto.builder()
                         .menuName(orderItem.getMenu().getName())
@@ -42,6 +42,7 @@ public class MyPageService {
                     .totalPrice(order.getTotalPrice())
                     .waitingNumber(order.getWaitingNumber())
                     .createdDate(order.getCreatedDate())
+                    .paymentMethod(order.getPaymentMethod())
                     .orderItemDtoList(orderItemDtoList)
                     .build();
             orderDataDtoList.add(orderDataDto);

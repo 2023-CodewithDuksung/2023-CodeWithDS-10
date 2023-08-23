@@ -52,7 +52,7 @@ public class RegistrationController {
 
     @GetMapping("/order/insert")
     public Order orderInsert() {
-        Order order = new Order(memberRepository.findById(5).get(), "카드", 55000, new Date(), 20, 754);
+        Order order = new Order(memberRepository.findById(2).get(), "카드", 66000, new Date(), 20, 754);
         orderRepository.save(order);
         order.getMember().getOrders().add(order);
         return order;
@@ -60,7 +60,7 @@ public class RegistrationController {
 
     @GetMapping("/orderItem/insert")
     public OrderItem orderItemInsert(){
-        OrderItem orderItem = new OrderItem(menuRepository.findById(2).get(), orderRepository.findById(2).get(), menuRepository.findById(2).get().getStore(), 3, 6000);
+        OrderItem orderItem = new OrderItem(menuRepository.findById(8).get(), orderRepository.findById(2).get(), menuRepository.findById(8).get().getStore(), 3, 6000);
         orderItemRepository.save(orderItem);
         orderItem.getMenu().getOrderItems().add(orderItem);
         orderItem.getOrder().getOrderitems().add(orderItem);

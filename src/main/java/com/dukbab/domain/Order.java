@@ -1,9 +1,7 @@
 package com.dukbab.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,6 +13,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class Order {
 
     @Id
@@ -34,7 +34,7 @@ public class Order {
 
     private Date createdDate; // 생성일
 
-    private int cookingTime; // 조리 예상 시간
+    private int cookingTime; // 조리 예상 시간 무시하기로 했다.
 
     private int waitingNumber; // 대기 번호
 
