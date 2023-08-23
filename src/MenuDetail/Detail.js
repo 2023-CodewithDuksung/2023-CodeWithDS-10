@@ -2,8 +2,9 @@ import './Detail.css';
 import { useState } from 'react';
 import star from '../img/star.jpg';
 import btn_review from '../img/btn_reviewlist.jpg';
-import menu from "../MenuList.js";
+import menu from "../Menu/MenuList";
 import { Link, useLocation, useParams } from 'react-router-dom';
+import CartModal from './Modal.js';
 
 function Detail() {      
 
@@ -12,7 +13,21 @@ function Detail() {
         return item.title == title;
     });
 
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const openModal=()=> {
+        setModalVisible(true);
+    };
+
+    const hideModal = () => {
+        setModalVisible(false);
+    }
+
     return (
+    <>
+    {modalVisible && (
+        <CartModal hideModal={hideModal}/>
+    )}
     <div className='detail_container'>
         <div className='detail_wrap'>
             <div className='left'>
@@ -42,9 +57,11 @@ function Detail() {
                         <p>9000 원</p>
                     </div>
                     <div className='btn_container'>
-                        <div className='btn_cart'>장바구니
+                        <div className='btn_cart' onClick={()=> openModal}>
+                            장바구니
                         </div>
-                        <div className='btn_purchase'>결제
+                        <div className='btn_purchase'>
+                            결제
                         </div>
                     </div>
                 </div>
@@ -66,6 +83,7 @@ function Detail() {
             </div>
         </div>
     </div>
+    </>
 )};
 
 export default Detail;

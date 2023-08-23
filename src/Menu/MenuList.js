@@ -5,7 +5,6 @@ const menu= [
     category: "천원의아침밥",
     price: 1000,
     img: "/menu_img/item-1.jpg",
-    desc:`carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
     id: 1,
@@ -13,8 +12,6 @@ const menu= [
     category: "오늘의메뉴",
     price: 6500,
     img: "/menu_img/item-2.jpg",
-    desc:' ',
-   desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
     id: 2,
@@ -22,7 +19,6 @@ const menu= [
     category: "파스타치요",
     price: 7500,
     img: "/menu_img/item-3.jpg",
-    desc:' ',
   desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
@@ -31,8 +27,6 @@ const menu= [
     category: "파스타치요",
     price: 6000,
     img: "/menu_img/item-4.jpg",
-    desc:' ',
-   desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
     id: 4,
@@ -40,8 +34,6 @@ const menu= [
     category: "파스타치요",
     price: 6500,
     img: "/menu_img/item-5.jpg",
-    desc:' ',
-   desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
     id: 5,
@@ -49,7 +41,6 @@ const menu= [
     category: "파스타치요",
     price: 7500,
     img: "/menu_img/item-6.jpg",
-   desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
 
   },
   {
@@ -58,7 +49,6 @@ const menu= [
     category: "파스타치요",
     price: 7500,
     img: "/menu_img/item-7.jpg",
-   desc:`carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
     id: 7,
@@ -66,7 +56,6 @@ const menu= [
     category: "파스타치요",
     price: 7000,
     img: "/menu_img/item-8.jpg",
-   desc:`carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
     id: 8,
@@ -74,7 +63,6 @@ const menu= [
     category: "파스타치요",
     price: 2900,
     img: "/menu_img/item-9.jpg",
-   desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
     id: 9,
@@ -82,8 +70,7 @@ const menu= [
     category: "파스타치요",
     price: 2900,
     img: "/menu_img/item-10.jpg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-  },
+   },
 
   {
     id: 10,
@@ -91,47 +78,41 @@ const menu= [
     category: "니나노덮밥",
     price: 7000,
     img: "/menu_img/item-11.jpg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-  },
+   },
   {
     id: 11,
     title: "우동돈까스세트",
     category: "니나노덮밥",
     price: 6200,
     img: "/menu_img/item-12.jpg",
-    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
   },
   {
-    id: 11,
+    id: 12,
     title: "제육덮밥",
     category: "니나노덮밥",
     price: 6500,
     img: "/menu_img/item-13.jpg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-  },
+   },
   {
-    id: 12,
+    id: 13,
     title: "닭갈비덮밥",
     category: "니나노덮밥",
     price: 7000,
     img: "/menu_img/item-14.jpg",
-    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
   },
   {
-    id: 13,
+    id: 14,
     title: "오므라이스",
     category: "니나노덮밥",
     price: 7000,
     img: "/menu_img/item-15.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
-    id: 14,
+    id: 15,
     title: "불닭마요덮밥",
     category: "니나노덮밥",
     price: 6500,
     img: "/menu_img/item-16.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 
   {
@@ -140,7 +121,6 @@ const menu= [
     category: "일식/양식",
     price: 6000,
     img: "/menu_img/item-17.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 17,
@@ -148,7 +128,6 @@ const menu= [
     category: "일식/양식",
     price: 6500,
     img: "/menu_img/item-18.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 18,
@@ -156,7 +135,6 @@ const menu= [
     category: "일식/양식",
     price: 6500,
     img: "/menu_img/item-19.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 19,
@@ -164,7 +142,6 @@ const menu= [
     category: "일식/양식",
     price: 4500,
     img: "/menu_img/item-20.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 20,
@@ -172,7 +149,6 @@ const menu= [
     category: "샌드위치카페",
     price: 2000,
     img: "/menu_img/item-21.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 21,
@@ -180,7 +156,6 @@ const menu= [
     category: "샌드위치카페",
     price: 2900,
     img: "/menu_img/item-22.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 22,
@@ -188,7 +163,6 @@ const menu= [
     category: "샌드위치카페",
     price: 3200,
     img: "/menu_img/item-23.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 23,
@@ -196,7 +170,6 @@ const menu= [
     category: "샌드위치카페",
     price: 3200,
     img: "/menu_img/item-24.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 24,
@@ -204,7 +177,6 @@ const menu= [
     category: "샌드위치카페",
     price: 2300,
     img: "/menu_img/item-25.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 25,
@@ -212,7 +184,6 @@ const menu= [
     category: "샌드위치카페",
     price: 2800,
     img: "/menu_img/item-26.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 26,
@@ -220,7 +191,6 @@ const menu= [
     category: "토스트",
     price: 3900,
     img: "/menu_img/item-27.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
     id: 27,
@@ -228,7 +198,6 @@ const menu= [
     category: "토스트",
     price: 3900,
     img: "/menu_img/item-28.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
 

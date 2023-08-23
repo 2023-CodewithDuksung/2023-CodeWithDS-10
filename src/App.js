@@ -4,7 +4,7 @@ import Detail from './MenuDetail/Detail.js';
 import MyPage from "./MyPage/MyPage.js";
 import Cart from "./Cart/Cart.js";
 import Review from "./Review/Review.js";
-import menu from "./MenuList.js";
+import menu from "./Menu/MenuList.js";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useState } from "react";
 

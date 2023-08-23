@@ -1,4 +1,4 @@
-import menu from '../MenuList.js';
+import menu from './MenuList.js';
 import {Link} from "react-router-dom";
 import "./AllMenu.css";
 

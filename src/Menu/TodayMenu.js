@@ -1,13 +1,13 @@
 import {Link} from "react-router-dom";
 import "./AllMenu.css";
 
-const menu = [{
+const menu = [
+    {
     id: 0,
     title: "천원의 아침밥",
     category: "천원의 아침밥",
     price: 1000,
     img: "/menu_img/item-1.jpg",
-    desc:`carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
     },
     {
         id: 1,
@@ -15,8 +15,6 @@ const menu = [{
         category: "오늘의메뉴",
         price: 6500,
         img: "/menu_img/item-2.jpg",
-        desc:' ',
-       desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
     }
 ];
 

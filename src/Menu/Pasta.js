@@ -2,14 +2,12 @@ import {Link} from "react-router-dom";
 import "./AllMenu.css";
 
 const menu = [
-    {
+      {
         id: 2,
         title: "4분돼지김치파스타",
         category: "파스타치요",
         price: 7500,
         img: "/menu_img/item-3.jpg",
-        desc:' ',
-      desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
       },
       {
         id: 3,
@@ -17,26 +15,21 @@ const menu = [
         category: "파스타치요",
         price: 6000,
         img: "/menu_img/item-4.jpg",
-        desc:' ',
-       desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-      },
+       },
       {
         id: 4,
         title: "트러플버섯크림파스타",
         category: "파스타치요",
         price: 6500,
         img: "/menu_img/item-5.jpg",
-        desc:' ',
-       desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-      },
+       },
       {
         id: 5,
         title: "대패삼겹크림파스타",
         category: "파스타치요",
         price: 7500,
         img: "/menu_img/item-6.jpg",
-       desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-    
+     
       },
       {
         id: 6,
@@ -44,7 +37,6 @@ const menu = [
         category: "파스타치요",
         price: 7500,
         img: "/menu_img/item-7.jpg",
-       desc:`carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
       },
       {
         id: 7,
@@ -52,7 +44,6 @@ const menu = [
         category: "파스타치요",
         price: 7000,
         img: "/menu_img/item-8.jpg",
-       desc:`carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
       },
       {
         id: 8,
@@ -60,15 +51,13 @@ const menu = [
         category: "파스타치요",
         price: 2900,
         img: "/menu_img/item-9.jpg",
-       desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
-      },
+       },
       {
         id: 9,
         title: "직화불쭈꾸미토핑추가",
         category: "파스타치요",
         price: 2900,
         img: "/menu_img/item-10.jpg",
-        desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
       }
 ];
 
