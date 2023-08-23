@@ -5,9 +5,10 @@ import { useUserDispatch } from "../UserContext";
 
 import "./Signup.css";
 
-import so_img from "../img/siren_orduk.jpg";
-import name from "../img/name.jpg";
-import mail from "../img/mail.jpg";
+import so_img from "../img/siren_orduk.jpg"; //로고
+import name_img from "../img/name_img.jpg"; // 닉네임
+import mail from "../img/mail.jpg"; //메일
+import login_pwd from "../img/login_pwd.jpg"; //비번
 
 //백연결
 import axios from "axios";
@@ -110,6 +111,9 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <img className="logo_img" src={so_img}></img>
+
+      <img img className="mail_img" src={mail} alt="메일" />
+
       <input
         type="text"
         placeholder="메일 입력(덕성여자대학교 이메일)"
@@ -120,9 +124,9 @@ const SignUp = () => {
       />
       {idError ? <div style={{ color: "red" }}>{idError}</div> : ""}
 
+      <button className="duplication_dutton">중복 확인</button>
       <br />
-      <button>중복 확인</button>
-      <br />
+      <img img className="pwd_img" src={login_pwd} alt="비밀번호" />
 
       <input
         type="password"
@@ -135,6 +139,8 @@ const SignUp = () => {
       {pwdError ? <div style={{ color: "red" }}>{pwdError}</div> : ""}
 
       <br />
+
+      <img img className="pwd_img" src={login_pwd} alt="비밀번호" />
 
       <input
         type="password"
@@ -152,6 +158,8 @@ const SignUp = () => {
 
       <br />
 
+      <img img className="name_img" src={name_img} alt="닉네임" />
+
       <input
         type="name"
         placeholder="닉네임 입력"
@@ -165,7 +173,7 @@ const SignUp = () => {
       <br />
 
       <button type="button" onClick={onSignUp} className="signup_button_2">
-        가입
+        회원가입
       </button>
       <br />
       <br />

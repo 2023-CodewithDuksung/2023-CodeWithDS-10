@@ -6,15 +6,17 @@ import { useNavigate } from "react-router-dom"; // useNavigate 임포트
 const Modify = () => {
   const { user, userList } = useUserState();
   const dispatch = useUserDispatch();
-  const navigate = useNavigate(); // useNavigate 훅을 사용하여 페이지 이동 함수 가져오기
+  const navigate = useNavigate();
+
+  console.log(user.userId);
+  console.log(user.userPwd);
 
   const [id, onChangeId] = useInput(user.userId);
-  const [name, onChangeName] = useInput(user.name);
-  const [pwd, onChangePwd] = useInput("");
   const [nowPwd, onChangeNowPwd] = useInput("");
+  const [pwd, onChangePwd] = useInput("");
   const [confirmPwd, onChangeConfirmPwd] = useInput("");
+
   const [errorMessage, setErrorMessage] = useState({
-    idError: "",
     nowPwdError: "",
     pwdError: "",
     confirmPwdError: "",
@@ -25,6 +27,7 @@ const Modify = () => {
     pwdReg: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g,
   };
 
+  //정규식확인
   const validationCheck = useCallback((input, regex) => {
     return input === "" || regex.test(input);
   }, []);
@@ -73,11 +76,6 @@ const Modify = () => {
   }, [confirmPwd, pwd]);
 
   const onModify = () => {
-    if (!name || !pwd || !confirmPwd || !nowPwd) {
-      alert("모든 값을 정확하게 입력해주세요");
-      return;
-    }
-
     if (errorMessage.nowPwdError) {
       alert("현재 비밀번호와 일치하지 않습니다.");
       return;
@@ -93,7 +91,7 @@ const Modify = () => {
     dispatch({
       type: "MODIFY",
       index: index,
-      userName: name,
+      userId: id,
       userPwd: pwd,
     });
 
@@ -103,17 +101,7 @@ const Modify = () => {
 
   return (
     <div>
-      <div>메일 : {user.userId}</div>
-
-      <div>
-        닉네임 :
-        <input
-          type="name"
-          value={name}
-          onChange={onChangeName}
-          placeholder="name"
-        />
-      </div>
+      <div>메일 : {id}</div>
 
       <div>
         현재 비밀번호 :

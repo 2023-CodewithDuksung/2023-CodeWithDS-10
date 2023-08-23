@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Mypage from "./pages/Mypage";
 import Modify from "./pages/Modify";
+import ModifyName from "./pages/ModifyName";
 import Header from "./pages/Header";
 import useInput from "./pages/useInput";
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/modify" element={<Modify />} />
+        <Route path="/modifyname" element={<ModifyName />} />
       </Routes>
     </div>
   );

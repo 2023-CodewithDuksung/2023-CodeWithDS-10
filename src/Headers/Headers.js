@@ -4,7 +4,18 @@ import cart_img from "../img/cart_img.jpg";
 import "./Headers.css";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+import { useUserState } from "../UserContext";
+
+export default function Headers() {
+  const { user } = useUserState();
+
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("로그아웃하시겠습니까?");
+    if (confirmLogout) {
+      // 로그아웃 동작을 수행하는 로직 추가
+    }
+  };
+
   return (
     <div className="Container">
       <div className="HeaderArea">
@@ -30,10 +41,10 @@ export default function Header() {
                     height="45.95px"
                   ></img>
                   <a className="nick" href="#!">
-                    덕밥이
+                    {user.userId}
                   </a>
                   <span>님</span>
-                  <Link to={`/`} className="btn_login">
+                  <Link to={`/`} className="btn_login" onClick={handleLogout}>
                     로그아웃
                   </Link>
                 </div>

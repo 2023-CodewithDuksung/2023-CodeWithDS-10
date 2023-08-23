@@ -2,7 +2,11 @@ import React, { createContext, useContext, useReducer } from "react";
 
 const initialState = {
   userList: [],
-  user: null,
+  user: {
+    userId: null,
+    userPwd: null,
+    name: null,
+  },
 };
 
 const reducer = (state, action) => {
@@ -18,6 +22,7 @@ const reducer = (state, action) => {
         user: {
           userId: action.userId,
           userPwd: action.userPwd,
+          name: action.userName,
         },
       };
     case "LOGOUT":
@@ -34,7 +39,11 @@ const reducer = (state, action) => {
       });
       return {
         ...state,
-        user: { userId: action.userId, userPwd: action.userPwd },
+        user: {
+          userId: action.userId,
+          userPwd: action.userPwd,
+          name: action.userName,
+        },
         userList: state.userList,
       };
     default:
