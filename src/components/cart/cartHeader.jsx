@@ -11,11 +11,13 @@ export const CartHeader =({handleAllCheck, isAllChecked}) =>{
           
           />
           <span>상품정보</span>
+          <br></br>
           <span>수량</span>
-          <span>상품금액</span>
+          
 
           <p>전체선택</p>
         </div>
       </div>
     );
 };
+//<span>상품금액</span>

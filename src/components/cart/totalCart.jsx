@@ -1,11 +1,12 @@
 import styles from "./cart.module.css";
 import {useEffect} from "react";
 
-export const TotalCart =({total, setTotal, cart, found}) =>{
+export const TotalCart =({total, setTotal, cart, found, convertPrice}) =>{
   //total금액 계산
   useEffect(()=>{
     if(found && found.length > 0){
-      const sum = found.map((item)=>item[0].price * item[0].quantity);
+      const temp =found.filter((item)=>item.length != 0);
+      const sum = temp.map((item)=>item[0].price * item[0].quantity);
       const reducer = (acc,cur) => acc+cur;
       if(sum.length == 0){
         setTotal(0);
@@ -24,28 +25,50 @@ export const TotalCart =({total, setTotal, cart, found}) =>{
     <div className={styles.total}>
     <div className={styles.total_price}>
       <p className={styles.cart_product_total_price}>총 상품금액</p>
-      <p className={styles.cart_product_price}>{total}</p>
+      <p className={styles.cart_product_price}>{convertPrice(total)}</p>
     </div>
     <div className={styles.pay_minus}>
       <img src="/images/icon-minus-line.svg" alt="minus" />
     </div>
+
+
     <div className={styles.sale}>
       <p className={styles.cart_product_sale}>상품 할인</p>
       <p className={styles.cart_product_sale_price}>0원</p>
     </div>
-    <div className={styles.pay_plus}>
-      <img src="/images/icon-plus-line.svg" alt="plus" />
-    </div>
-    <div className={styles.delivery}>
-      <p className={styles.cart_product_delivery}>배송비</p>
-      <p className={styles.cart_product_delivery_price}>0원</p>
-    </div>
-
+    <br></br>
+    
     <div className={styles.payment}>
       <p className={styles.cart_prouct_payment}>결제 예정 금액</p>
-      <p className={styles.cart_prouct_payment_price}>{total}</p>
+      <p className={styles.cart_prouct_payment_price}>
+        {convertPrice(total)}</p>
+      
     </div>
+
+    <div className={styles.btn_submit}>
+    <div><button className={styles.btn_buy}>결제하기</button></div>
+    </div>
+
   </div>
     );
 
 };
+
+
+/*<div className={styles.delivery}>
+      <p className={styles.cart_product_delivery}>배송비</p>
+      <p className={styles.cart_product_delivery_price}>0원</p>
+    </div>
+
+<div className={styles.sale}>
+<p className={styles.cart_product_sale}>상품 할인</p>
+<p className={styles.cart_product_sale_price}>0원</p>
+</div> 
+<div className={styles.pay_minus}>
+      <img src="/images/icon-minus-line.svg" alt="minus" />
+    </div>
+    
+    <div className={styles.pay_plus}>
+      <img src="/images/icon-plus-line.svg" alt="plus" />
+    </div>
+*/

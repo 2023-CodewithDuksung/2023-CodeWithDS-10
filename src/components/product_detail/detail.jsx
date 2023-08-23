@@ -81,9 +81,7 @@ export const Detail = ({convertPrice, cart, setCart}) => {
             </span>
           </div>
 
-          <div className={styles.delivery}>
-            <p>택배배송 / 무료배송</p>
-          </div>
+          
 
           <div className={styles.line}></div>
 
@@ -126,7 +124,7 @@ export const Detail = ({convertPrice, cart, setCart}) => {
           </div>
 
           <div className={styles.btn}>
-            <button className={styles.btn_buy}>바로 구매</button>
+            <button className={styles.btn_buy}>바로 결제</button>
             <button className={styles.btn_cart} onClick={()=> handleCart()}>장바구니</button>
           </div>
         </section>

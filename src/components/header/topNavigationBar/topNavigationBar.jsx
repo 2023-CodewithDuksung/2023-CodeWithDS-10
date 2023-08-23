@@ -11,10 +11,7 @@ export const TopNavigationBar = ({cart}) => {
             <img src="/images/logo.png" alt="logo" />
           </h1>
         </Link>
-        <div className={styles.input_wrap}>
-          <input type="text" placeholder="상품을 검색해보세요!" />
-          <img src="/images/icon-search.svg" alt="search" />
-        </div>
+        
       </div>
 
       <div className={styles.menu}>

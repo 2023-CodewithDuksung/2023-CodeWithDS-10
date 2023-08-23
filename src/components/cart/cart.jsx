@@ -104,7 +104,13 @@ export const Cart = ({cart, setCart, convertPrice, checkLists, setCheckLists }) 
       {cart.length === 0 ?(
         ""
       ):(
-      <TotalCart total={total} setTotal={setTotal} cart={cart} found ={found}/>)}
+      <TotalCart 
+      total={total} 
+      setTotal={setTotal} 
+      cart={cart} 
+      found ={found}
+      convertPrice={convertPrice}
+      />)}
       
     </>
   );

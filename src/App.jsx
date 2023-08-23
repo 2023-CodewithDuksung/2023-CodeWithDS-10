@@ -22,8 +22,11 @@ function App() {
       <TopNavigationBar cart={cart}/>
       <Routes>
         <Route path="/" element={
-        <Home products={products} setProducts={setProducts}
+        <Home 
+        products={products} 
+        setProducts={setProducts}
         convertPrice={convertPrice}/>} />
+        
         <Route 
         path="/product/:id" 
         element={

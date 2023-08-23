@@ -5,42 +5,42 @@
       "name": "아침메뉴",
       "provider": "아침메뉴",
       "price": 1000,
-      "image": "./images/item-1.jpg"
+      "image": "/images/item-1.jpg"
     },
     {
       "id": 1,
       "name": "오늘의메뉴",
       "provider": "오늘의메뉴",
       "price": 6500,
-      "image": "./images/item-2.jpg"
+      "image": "/images/item-2.jpg"
     },
     {
       "id": 2,
       "name": "4분돼지김치파스타",
       "provider": "파스타치요",
       "price": 7500,
-      "image": "./images/item-3.jpg"
+      "image": "/images/item-3.jpg"
     },
     {
       "id": 3,
       "name": "고기리들기름파스타",
       "provider": "파스타치요",
       "price": 6000,
-      "image": "./images/item-4.jpg"
+      "image": "/images/item-4.jpg"
     },
     {
       "id": 4,
       "name": "트러플버섯크림파스타",
       "provider": "파스타치요",
       "price": 6500,
-      "image": "./images/item-5.jpg"
+      "image": "/images/item-5.jpg"
     },
     {
       "id": 5,
       "name": "대패삼겹크림파스타",
       "provider": "파스타치요",
       "price": 7500,
-      "image": "./images/item-6.jpg"
+      "image": "/images/item-6.jpg"
     }
   
     

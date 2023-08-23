@@ -2,11 +2,11 @@ import styles from "./cart.module.css";
 
 export const CartList =({
     cart, 
-    convertPrice, 
     checkLists,
     handleQuantity, 
     handelRemove, 
-    handleCheckList})=> {
+    handleCheckList,
+    convertPrice })=> {
     
     return (
     <section className={styles.cart_product_list}>
@@ -20,14 +20,15 @@ export const CartList =({
       <div className={styles.cart_product_image}>
         <img src={cart.image} alt="product-img" />
       </div>
-
+                              
       <div className={styles.cart_product_info}>
         <p className={styles.seller_store}>{cart.provider}</p>
         <p className={styles.product_name}>{cart.name}</p>
-        <p className={styles.price}>{convertPrice(cart.price * cart.quantity)}원</p>
-        <p className={styles.delivery}>택배배송 / 무료배송</p>
+        <p className={styles.price}>{convertPrice(cart.price)}원</p>  
+        
       </div>
     </div>
+    <br></br>
 
     <div className={styles.cart_product_count}>
       <img
@@ -50,12 +51,19 @@ export const CartList =({
 
     <div className={styles.cart_product_price}>
       <p className={styles.total_price}></p>
-      <button className={styles.btn_submit}>주문하기</button>
+      <br></br>
+      <p className={styles.total_price}></p>
+      
     </div>
+
+    
 
     <div className={styles.product_remove} onClick={()=>handelRemove(cart.id)}>
       <img src="/images/icon-delete.svg" alt="delete" />
     </div>
   </section>
-    );
+    );   //* cart.quantity : 가격합산 바로 보려면 추가하기 line 27
 };
+
+//<br></br>
+      //<div><button className={styles.btn_submit}>결제하기</button></div>
