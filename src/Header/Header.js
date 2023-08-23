@@ -4,14 +4,14 @@ import cart_img from '../img/cart_img.jpg';
 import './Header.css'
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export const Header = ({cart}) => {
     return(
         <div className='Container'>
             <div className='HeaderArea'>
                 <div className='TopArea'>
                     <div className='TopWrap'>
                         <div className='Title'>
-                            <Link to='menu'>
+                            <Link to='/'>
                                 <img src={so_img} alt='사이렌 오덕' width='310px' height='79px'></img>
                             </Link>
                         </div>
@@ -23,12 +23,17 @@ export default function Header() {
                                     <span>님</span>
                                     <Link to={`/`} className='btn_login'>로그아웃</Link>
                                 </div>
-                                <div className='myPage'>
+                                <div className='MyPage'>
                                     <Link to={`/mypage`}>마이페이지</Link>
                                 </div>
                                 <div className='Cart'>
+                                        {cart.length >=1 ?(
+                                            <div className='new_shopping_cart'>
+                                                <p>{cart.length}</p>
+                                             </div>
+                                        ):""}
                                     <Link to={`/cart`}>
-                                        <img src={cart_img} alt='장바구니' width='120px' height='35px'></img>
+                                        <img src={cart_img} alt='장바구니' width='130px' height='38px'></img>
                                     </Link>
                                 </div>
                             </div>

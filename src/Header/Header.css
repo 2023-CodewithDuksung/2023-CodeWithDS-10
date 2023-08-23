@@ -88,7 +88,7 @@
                     color: black;
                 }
     
-                .myPage {
+                .MyPage {
                     padding-top: 92px;
                     padding-bottom: 21px;
                     padding-left: 15px;
@@ -97,7 +97,7 @@
                     font-weight: bold;
                 }
     
-                .myPage > a {
+                .MyPage > a {
                     color: #505050;
                     text-decoration: none;
                 }
