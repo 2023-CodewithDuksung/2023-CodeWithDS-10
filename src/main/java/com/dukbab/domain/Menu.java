@@ -1,14 +1,11 @@
 package com.dukbab.domain;
 
 import ch.qos.logback.core.status.Status;
-<<<<<<< HEAD
 import lombok.*;
-=======
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
->>>>>>> origin/back-end
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -73,7 +70,7 @@ public class Menu {
         this.originIng = originIng;
         this.allergicIng = allergicIng;
         this.time = time;
-        this.avgRating = avgRating;
+        this.rating = avgRating;
         this.content = content;
         this.cnt = cnt;
     }
