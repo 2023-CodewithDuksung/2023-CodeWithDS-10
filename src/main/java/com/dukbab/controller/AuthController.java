@@ -45,4 +45,11 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.OK).body("로그아웃되었습니다.");
     }
 
+    // 회원 탈퇴
+    @PostMapping("/delete")
+    public ResponseEntity<String> delete(HttpServletRequest request){
+        authService.delete(request);
+        return ResponseEntity.status(HttpStatus.OK).body("탈퇴 완료되었습니다.");
+    }
+
 }
