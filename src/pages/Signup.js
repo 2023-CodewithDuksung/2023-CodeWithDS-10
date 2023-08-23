@@ -110,71 +110,74 @@ const SignUp = () => {
 
   return (
     <div className="signup-container">
-      <img className="logo_img" src={so_img}></img>
+      <img className="logo_img_signup" src={so_img}></img>
 
-      <img img className="mail_img" src={mail} alt="메일" />
+      <div className="style">
+        <img img className="mail_img" src={mail} alt="메일" />
 
-      <input
-        type="text"
-        placeholder="메일 입력(덕성여자대학교 이메일)"
-        value={id}
-        onChange={onChangeId}
-        className="signup_id"
-        required
-      />
-      {idError ? <div style={{ color: "red" }}>{idError}</div> : ""}
+        <input
+          type="text"
+          placeholder="메일 입력(덕성여자대학교 이메일)"
+          value={id}
+          onChange={onChangeId}
+          className="signup_id"
+          required
+        />
+        {idError ? <div style={{ color: "red" }}>{idError}</div> : ""}
 
-      <button className="duplication_dutton">중복 확인</button>
-      <br />
-      <img img className="pwd_img" src={login_pwd} alt="비밀번호" />
+        <button className="duplication_dutton">중복 확인</button>
 
-      <input
-        type="password"
-        placeholder="비밀번호"
-        value={pwd}
-        onChange={onChangePwd}
-        className="signup_pwd"
-        required
-      />
-      {pwdError ? <div style={{ color: "red" }}>{pwdError}</div> : ""}
+        <br />
+        <img img className="pwd_img" src={login_pwd} alt="비밀번호" />
 
-      <br />
+        <input
+          type="password"
+          placeholder="비밀번호"
+          value={pwd}
+          onChange={onChangePwd}
+          className="signup_pwd"
+          required
+        />
+        {pwdError ? <div style={{ color: "red" }}>{pwdError}</div> : ""}
 
-      <img img className="pwd_img" src={login_pwd} alt="비밀번호" />
+        <br />
 
-      <input
-        type="password"
-        placeholder="비밀번호 확인"
-        value={confirmPwd}
-        onChange={onChangeConfirmPwd}
-        className="signup_confirmPwd"
-        required
-      />
-      {confirmPwdError ? (
-        <div style={{ color: "red" }}>{confirmPwdError}</div>
-      ) : (
-        ""
-      )}
+        <img img className="pwd_img" src={login_pwd} alt="비밀번호" />
 
-      <br />
+        <input
+          type="password"
+          placeholder="비밀번호 확인"
+          value={confirmPwd}
+          onChange={onChangeConfirmPwd}
+          className="signup_confirmPwd"
+          required
+        />
+        {confirmPwdError ? (
+          <div style={{ color: "red" }}>{confirmPwdError}</div>
+        ) : (
+          ""
+        )}
 
-      <img img className="name_img" src={name_img} alt="닉네임" />
+        <br />
 
-      <input
-        type="name"
-        placeholder="닉네임 입력"
-        value={name}
-        onChange={onChangeName}
-        className="signup_name"
-        required
-      />
+        <img img className="name_img" src={name_img} alt="닉네임" />
 
-      <br />
-      <br />
+        <input
+          type="name"
+          placeholder="닉네임 입력"
+          value={name}
+          onChange={onChangeName}
+          className="signup_name"
+          required
+        />
 
-      <button type="button" onClick={onSignUp} className="signup_button_2">
-        회원가입
-      </button>
+        <br />
+        <br />
+
+        <button type="button" onClick={onSignUp} className="signup_button_2">
+          회원가입
+        </button>
+      </div>
       <br />
       <br />
     </div>

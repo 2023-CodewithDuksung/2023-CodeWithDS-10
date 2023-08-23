@@ -12,6 +12,7 @@ import Modify from "./pages/Modify";
 import ModifyName from "./pages/ModifyName";
 import Header from "./pages/Header";
 import useInput from "./pages/useInput";
+import Diary from "./reviews/Diary";
 
 const App = () => {
   const { user } = useUserState();
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/modify" element={<Modify />} />
         <Route path="/modifyname" element={<ModifyName />} />
+        <Route path="/diary" element={<Diary />} />
       </Routes>
     </div>
   );

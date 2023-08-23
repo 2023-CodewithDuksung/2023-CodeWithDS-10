@@ -1,17 +1,16 @@
 /* 로그인 */
 
 .login-container {
-  margin-left: 500px;
   margin-top: 150px;
+  text-align: center;
 }
-.logo_img {
+
+.logo_img_login {
+  margin: 0 auto; /* 수직 정렬은 0, 가로 정렬은 auto로 설정 */
   display: block;
-  top: 266px;
-  margin-left: 76px;
   width: 379px;
   height: 101px;
 }
-
 .id_img {
   width: 44px;
   height: 44px;
@@ -41,15 +40,12 @@
 }
 
 .login_button {
-  display: block;
   width: 500px;
   height: 40px;
 
-  background: var(--unnamed-color-b34d5f) 0% 0% no-repeat padding-box;
   border: 1px solid var(--unnamed-color-707070);
   background: #b34d5f 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
-  opacity: 1;
 
   font: normal normal normal 25px/42px Malgun Gothic;
 
@@ -62,11 +58,10 @@
   margin-top: 10px;
 
   /* UI Properties */
-  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+
   border: 1px solid var(--unnamed-color-707070);
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
-  opacity: 1;
 
   font: normal normal normal 25px/42px Malgun Gothic;
 

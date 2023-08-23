@@ -1,15 +1,17 @@
 /*회원가입 페이지 */
 .signup-container {
-  margin-left: 500px;
   margin-top: 150px;
   font-family: "Nanum Gothic";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 이미지 */
-.logo_img {
+.logo_img_signup {
   display: block;
   top: 266px;
-  margin-left: 76px;
+
   width: 379px;
   height: 101px;
 }

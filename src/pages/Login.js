@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <img className="logo_img" src={so_img}></img>
+      <img className="logo_img_login" src={so_img}></img>
 
       <img className="id_img" src={login_id} alt="아이디" />
       <input
@@ -63,7 +63,7 @@ const Login = () => {
       <button type="button" onClick={onLogin} className="login_button">
         로그인
       </button>
-
+      <br />
       <a href="/signup">
         <button type="button" className="signup_button">
           {" "}
