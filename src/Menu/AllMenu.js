@@ -5,14 +5,15 @@ import "./AllMenu.css";
 
 function AllMenu() {
     return (
+      <>
       <div className='all_list'>
         <ul className='all_wrap'>
           {menu.map((item, index) => (
             <li className='menuData'>
-              <Link to={`/menu/${item.title}`}>
+              <Link to={`/${item.title}`}>
                   <dl>
                     <dt>
-                        <img src={process.env.PUBLIC_URL + item.img} alt={item.id} width='350px' height='300px'/>
+                        <img src={process.env.PUBLIC_URL + item.img} alt={item.id} width='130px' height='130px'/>
                     </dt>
                     <dd>{item.title}</dd>
                   </dl>
@@ -21,6 +22,7 @@ function AllMenu() {
           ))}
         </ul>
       </div>
+      </>
     );
   };
 

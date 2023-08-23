@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import AllMenu from './AllMenu.js';
+import { useState, useEffect } from 'react';
 import Toast from './Toast.js';
 import Sandwich from './Sandwich';
 import FoodRamen from './Ramen';
 import Rice from './Rice.js';
-import TodayMenu from './TodayMenu.js';
+import Select from './Select.js';
 import Pasta from './Pasta.js';
 import styled from 'styled-components';
+import circle_g from '../img/circle_green.jpg'
+import {getMenus} from '../Service/fetcher.js';
+import './Tab.css'
 
 // Styled-Component 라이브러리를 활용해 TabMenu 와 Desc 컴포넌트의 CSS를 구현.
 
@@ -37,21 +39,47 @@ const TabMenu = styled.div`
     background-color: #873856;
     color: #ffffff;
   }
+
+  .category {
+    font-size: 40px,
+    font-weight: bold;
+  }
 `;
 
+export default function Tab({menus, setMenus}) {
+  useEffect(()=>{
+    getMenus().then((data) => {
+      setMenus(data.data.menus);
+    })
+  }, [setMenus]);
 
-export default function Tab(){
+  const selectArray = [];
+  const pastaArray = [];
+  const riceArray = [];
+  const jpfoodArray=[];
+  const swArray=[];
+  const toastArray = [];
+  
+  menus.map(function(el, index) {
+    if(el.category == '선택') selectArray.push(el);
+    else if(el.category == '파스타치오') pastaArray.push(el);
+    else if(el.category == '니나노덮밥') riceArray.push(el);
+    else if(el.category == '일식/양식') jpfoodArray.push(el);
+    else if(el.category == '샌드위치카페') swArray.push(el);
+    else toastArray.push(el);
+  
+  });
+
   // Tab Menu 중 현재 어떤 Tab이 선택되어 있는지 확인하기 위한 currentTab 상태와 currentTab을 갱신하는 함수가 존재해야 하고, 초기값은 0.
   const [currentTab, clickTab] = useState(0);
 
-  const menuArr = [
-    { name: '전체' , content: <AllMenu/>},
-    { name: '오늘의 메뉴', content: <TodayMenu/>},
-    { name: '파스타치요', content: <Pasta/>},
-    { name: '니나노덮밥', content: <Rice/>},
-    { name: '일식/양식', content: <FoodRamen/>},
-    { name: '샌드위치카페', content: <Sandwich/>},
-    { name: '토스트', content: <Toast/>},
+  const TabArr = [
+    { name: '선택', content: <Select selectArray={selectArray}/> },
+    { name: '파스타치오', content: <Pasta pastaArray={pastaArray}/>},
+    { name: '니나노덮밥', content: <Rice riceArray={riceArray}/>},
+    { name: '일식/양식', content: <FoodRamen jpfoodArray={jpfoodArray}/>},
+    { name: '샌드위치카페', content: <Sandwich swArray={swArray}/>},
+    { name: '토스트', content: <Toast toastArray={toastArray}/>},
 
   ];
 
@@ -61,15 +89,20 @@ export default function Tab(){
     clickTab(index);
   };
 return (
+
     <>
       <TabMenu> 
-          {menuArr.map((el,index) => (
+          {TabArr.map((el,index) => (
               <div className={index === currentTab ? "submenu focused" : "submenu" }
               onClick={() => selectMenuHandler(index)}>{el.name}
               </div>
             ))}
       </TabMenu>
-      {menuArr[currentTab].content}
+      <div className='congestion-container'>
+        <img src={circle_g} className='congestion'/>
+        <span className='category'>{TabArr[currentTab].name}</span>
+      </div>
+      {TabArr[currentTab].content}
     </>
   );
 };

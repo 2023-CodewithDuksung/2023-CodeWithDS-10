@@ -1,61 +1,16 @@
 import {Link} from "react-router-dom";
 import "./AllMenu.css";
 
-const menu = [
-    {
-        id: 10,
-        title: "치킨마요덮밥",
-        category: "니나노덮밥",
-        price: 7000,
-        img: "/menu_img/item-11.jpg",
-      },
-      {
-        id: 11,
-        title: "우동돈까스세트",
-        category: "니나노덮밥",
-        price: 6200,
-        img: "/menu_img/item-12.jpg",
-      },
-      {
-        id: 12,
-        title: "제육덮밥",
-        category: "니나노덮밥",
-        price: 6500,
-        img: "/menu_img/item-13.jpg",
-      },
-      {
-        id: 13,
-        title: "닭갈비덮밥",
-        category: "니나노덮밥",
-        price: 7000,
-        img: "/menu_img/item-14.jpg",
-      },
-      {
-        id: 14,
-        title: "오므라이스",
-        category: "니나노덮밥",
-        price: 7000,
-        img: "/menu_img/item-15.jpg",
-      },
-      {
-        id: 15,
-        title: "불닭마요덮밥",
-        category: "니나노덮밥",
-        price: 6500,
-        img: "/menu_img/item-16.jpg",
-      }    
-];
-
-function Rice() {
+function Rice({riceArray}) {
   return (
     <div className='all_list'>
       <ul className='all_wrap'>
-        {menu.map((item, index) => (
+        {riceArray.map((item, index) => (
           <li className='menuData'>
-            <Link to={`/menu/${item.title}`}>
+            <Link to={`/${item.title}`}>
                 <dl>
                   <dt>
-                      <img src={process.env.PUBLIC_URL + item.img} alt={item.id} width='350px' height='300px'/>
+                      <img src={process.env.PUBLIC_URL + item.img} alt={item.id} width='130px' height='130px'/>
                   </dt>
                   <dd>{item.title}</dd>
                 </dl>
