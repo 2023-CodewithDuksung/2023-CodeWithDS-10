@@ -23,6 +23,7 @@ import java.util.List;
 public class Menu {
 
     @Id
+    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int menuId;     // 메뉴 id
 
@@ -46,7 +47,7 @@ public class Menu {
 
     private int time;   // 소요 시간
 
-    private double avgRating;  // 메뉴 평점
+    private double rating;  // 메뉴 평점
 
     private String content; // 메뉴 소개
 
@@ -58,11 +59,11 @@ public class Menu {
     @OneToMany(mappedBy = "menu", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
+    @OneToMany(mappedBy = "menu", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<Review> reviews = new ArrayList<>();
 
     // 테스트 코드
-    public Menu(Store store, menuStatus menuStatus, String name, String imageUrl, int price, String originIng, String allergicIng, int time, double avgRating, String content, int cnt){
+    public Menu(Store store, menuStatus menuStatus, String name, String imageUrl, int price, String originIng, String allergicIng, int time, double rating, String content, int cnt){
         this.store = store;
         this.menuStatus = menuStatus;
         this.name = name;
@@ -71,12 +72,19 @@ public class Menu {
         this.originIng = originIng;
         this.allergicIng = allergicIng;
         this.time = time;
-        this.avgRating = avgRating;
+        this.rating = rating;
         this.content = content;
         this.cnt = cnt;
     }
 
 
+    public int getId() {
+        return menuId;
+    }
 
+    public void setId(int menuId){
+        this.menuId = menuId;
+
+    }
 }
 

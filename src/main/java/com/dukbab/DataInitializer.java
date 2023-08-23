@@ -93,11 +93,6 @@ public class DataInitializer implements ApplicationRunner {
 
         LocalTime currentTime = LocalTime.now();
 
-
-
-//        LocalTime openingTime = LocalTime.parse(hours[0].trim(), formatter);
-//        LocalTime closingTime = LocalTime.parse(hours[1].trim(), formatter);
-
         if (currentTime.isBefore(openingTime) || currentTime.isAfter(closingTime)) {
             store.setIsOpen(isOpen.CLOSE);
         } else {

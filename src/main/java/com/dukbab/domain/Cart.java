@@ -24,12 +24,10 @@ public class Cart {
     @Column(name="cartId")
     private int cartId;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="memberId")
     @JsonIgnore
     private Member member;
-
 
     private int totalPrice; // 총 가격
 
@@ -37,6 +35,7 @@ public class Cart {
 
     @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<CartItem> cartItems = new ArrayList<>();
+
 
   
 }

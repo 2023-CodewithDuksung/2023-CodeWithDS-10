@@ -27,6 +27,8 @@ public class MenuService {
         return menuRepository.findAll();
     }
 
+
+
     public List<MenuDTO> getAllMenuDTOs() {
         List<Menu> menus = menuRepository.findAll();
         return menus.stream()
@@ -42,6 +44,7 @@ public class MenuService {
 
     public List<MenuDTO> getDetailMenuDTOs(int menuId) {
         Optional<Menu> menus = menuRepository.findById(menuId);
+
         return menus.stream()
                 .map(menu -> {
                     MenuDTO menuDTO = new MenuDTO();

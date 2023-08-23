@@ -45,6 +45,11 @@ public class MemberService {
         return MemberResponseDto.of(memberRepository.save(member));
     }
 
+    // 멤버 id로 Member 찾기
+    public Member findMember(Integer memberId){
+        return memberRepository.findById(memberId).get();
+    }
+
 
 
 }
