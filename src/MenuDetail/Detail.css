@@ -1,13 +1,9 @@
 @media all {
     .detail_wrap {
-        height: 830px;
-        display: flex;
-    
         .left{
             position: absolute;
             height: 630px;
-            padding-top: 200px;
-            padding-left: 440px;
+            padding: 130px 0 0 360px;
         }
     
         .food_img > img {
@@ -15,14 +11,13 @@
         }
     
         .right {
-            width: 1010px;
-            padding-top: 190px;
-            padding-left: 1150px;
+            width: 700px;
+            padding: 120px 0 0 1050px;
             align-items: center;
         }
     
         .food_title {
-            width: 800px;
+            width: 700px;
             height: 46px;
             font-weight: bold;
             margin: 0;
@@ -89,7 +84,8 @@
             color: #464646;
             font-size: 20px;
             font-weight: bold;
-            vertical-align: middle;
+            display: flex;
+            justify-content: space-between;
         }
     
         .quantity > p {
@@ -99,6 +95,76 @@
             height: 27px;
             margin: 10;
         }
+
+        .amount {
+            position: relative;
+            width: 160px;
+            height: 45px;
+            border: 1px solid #707070;
+            border-radius: 11px;
+            margin: 35px 10px;
+          }
+          
+          .amount .minus {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            top: 50%;
+            left: 14px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #873856;
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            padding-right: 70px;
+          }
+          
+          .amount .count {
+            position: absolute;
+            width: 56px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #c4c4c4;
+            border-top:none;
+            border-bottom:none;
+            height: 45px;
+            padding: 0 5px;
+            border-color: #AAAAAA;
+            
+          }
+          
+          .amount .count span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          
+          .amount .plus {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            top: 50%;
+            right: 14px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #873856;
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 18px;
+            background-color: transparent;
+            border: none;
+            padding-left: 25px;
+          }
+
+          .amount .minus span, .amount .plus span{
+            color: #873856;
+          }
     
         .total {
             width: 630px;
@@ -157,7 +223,7 @@
     .review {
         display: inline-block;
         width: 630px;
-        margin-left: 440px;
+        margin-left: 360px;
     
         .review_wrap {
             display: block;
@@ -186,6 +252,16 @@
     }
 }
 
+.Cart > a{
+    text-decoration: none;
+}
+
+.new_shopping_cart > p{
+    color: black;
+    font-weight: bold;
+    height:100%
+}
+
 div.ModalPortal {
     width: 970px;
     height: 250px;
@@ -199,14 +275,29 @@ div.ModalPortal {
     width: 100%;
     height: 100%;
     border-color: transparent;
+    position: relative;
 }
 
 .ModalPortal > div > span {
+    position: absolute;
     width: 505px;
     height: 54px;
     font-size: 40px;
     font-weight: bold;
     color: #707070;
     margin: 102px 246px 94px 219px;
-    padding-top: 51px;
+}
+
+.ModalPortal > div > button {
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    margin: 191px 33px 19px 827px;
+    background-color: #b34d5f;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
