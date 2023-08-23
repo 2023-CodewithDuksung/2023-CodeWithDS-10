@@ -28,7 +28,7 @@ public class TokenProvider {
     private final Key key;
 
     // 로그아웃
-    private Set<String> blacklistedTokens = new HashSet<>(); // 블랙리스트 저장
+    private final Set<String> blacklistedTokens = new HashSet<>(); // 블랙리스트 저장
 
     public TokenProvider(@Value("${jwt.secret}") String secretKey){
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);

@@ -1,6 +1,7 @@
 package com.dukbab.service;
 
 import antlr.Token;
+import com.dukbab.configuration.SecurityUtil;
 import com.dukbab.domain.Member;
 import com.dukbab.dto.EmailCheckDto;
 import com.dukbab.dto.MemberRequestDto;
@@ -51,7 +52,21 @@ public class AuthService {
         if(jwt != null){
             tokenProvider.addToBlacklist(jwt);
         }
-
     }
+
+    public void delete(HttpServletRequest request){
+        // 로그인 하고 있는 사용자의 정보 삭제
+        Member member = memberRepository.findById(SecurityUtil.getCurrentMemberId()).orElseThrow(()-> new RuntimeException("로그인 유저 정보가 없습니다."));
+        memberRepository.delete(member);
+
+        // 헤더의 토큰 삭제
+        String jwt = request.getHeader("Authorization").substring(7);
+        if(jwt != null){
+            tokenProvider.addToBlacklist(jwt);
+        }
+    }
+
+
+
 
 }
