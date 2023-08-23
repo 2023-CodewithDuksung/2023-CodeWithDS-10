@@ -1,5 +1,6 @@
 package com.dukbab.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,14 +20,17 @@ public class Review {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="memberId")
+    @JsonIgnore
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="storeId")
+    @JsonIgnore
     private Store store;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="menuId")
+    @JsonIgnore
     private Menu menu;
 
     private double rating; // 별점

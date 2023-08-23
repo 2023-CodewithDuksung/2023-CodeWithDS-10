@@ -44,6 +44,7 @@ public class Store {
     @OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<Menu> menus = new ArrayList<>();
 
+<<<<<<< HEAD
     // 생성자에서 localTime 설정
     public Store(int storeId, String name, isOpen isOpen, String operationHours, int congestion) {
         this.storeId = storeId;
@@ -53,4 +54,15 @@ public class Store {
         this.congestion = congestion;
         this.localTime = LocalTime.now();
     }
+=======
+    // 테스트 코드
+    public Store(isOpen isOpen, String operationHours, String authenticationKey, int congestion){
+        this.isOpen = isOpen;
+        this.operationHours = operationHours;
+        this.authenticationKey = authenticationKey;
+        this.congestion = congestion;
+    }
+
+>>>>>>> origin/back-end
 }
+

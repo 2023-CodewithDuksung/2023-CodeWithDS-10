@@ -1,7 +1,14 @@
 package com.dukbab.domain;
 
 import ch.qos.logback.core.status.Status;
+<<<<<<< HEAD
 import lombok.*;
+=======
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+>>>>>>> origin/back-end
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,6 +29,7 @@ public class Menu {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "storeId")
+    @JsonIgnore
     private Store store;      // 가게 id
 
     @Enumerated(EnumType.STRING)
@@ -30,6 +38,7 @@ public class Menu {
     private String name;    // 메뉴 이름
 
     private String imageUrl;    // 메뉴 이미지 URL
+
 
     private int price;  // 메뉴 가격
 
@@ -54,10 +63,22 @@ public class Menu {
     @OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<Review> reviews = new ArrayList<>();
 
-
-
-
+    // 테스트 코드
+    public Menu(Store store, menuStatus menuStatus, String name, String imageUrl, int price, String originIng, String allergicIng, int time, double avgRating, String content, int cnt){
+        this.store = store;
+        this.menuStatus = menuStatus;
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.price = price;
+        this.originIng = originIng;
+        this.allergicIng = allergicIng;
+        this.time = time;
+        this.avgRating = avgRating;
+        this.content = content;
+        this.cnt = cnt;
+    }
 
 
 
 }
+
