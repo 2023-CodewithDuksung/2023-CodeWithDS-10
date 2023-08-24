@@ -11,7 +11,7 @@ import mail from "../img/mail.jpg"; //메일
 import login_pwd from "../img/login_pwd.jpg"; //비번
 
 //백연결
-import axios from "axios";
+// import axios from "axios";
 
 const SignUp = () => {
   const navigate = useNavigate();

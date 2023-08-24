@@ -30,7 +30,7 @@ const Login = () => {
       userId: id,
       userPwd: pwd,
     });
-    navigate("/home"); // 로그인 성공 시 /home 페이지로 이동
+    navigate("/menu"); // 로그인 성공 시 /menu 페이지로 이동
   };
 
   return (
