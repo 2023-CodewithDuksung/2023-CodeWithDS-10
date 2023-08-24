@@ -1,0 +1,24 @@
+.ticket {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.store-name {
+  margin: 0;
+  color: #333;
+}
+
+.order-number {
+  color: #666;
+}
+
+.menu-name {
+  margin: 10px 0;
+  color: #444;
+}
