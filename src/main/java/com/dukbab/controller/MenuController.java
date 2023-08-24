@@ -17,12 +17,13 @@ public class MenuController {
     public MenuController(MenuService menuService){
         this.menuService = menuService;
     }
-
+    // 모든 메뉴 정보 조회
     @GetMapping
     public List<MenuDTO> getAllMenus(){
         return menuService.getAllMenuDTOs();
     }
 
+    // 특정 메뉴의 상세 정보를 조회
     @GetMapping("/{menuId}")
     public List<MenuDTO> getMenuDetail(@PathVariable int menuId) {
         return menuService.getDetailMenuDTOs(menuId);

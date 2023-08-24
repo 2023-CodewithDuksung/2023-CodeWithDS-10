@@ -58,7 +58,7 @@ public class Review {
         this.id = id;
         this.member = member;
         this.store = store;
-        this.menu =menu;
+        this.menu = menu;
         this.nickname = nickname;
         this.rating = rating;
         this.title = title;
