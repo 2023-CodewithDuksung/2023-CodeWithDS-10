@@ -50,7 +50,7 @@ public class Member {
     private Cart cart;
 
 
-    @OneToMany(mappedBy = "member") // 양방향 관계
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL) // 양방향 관계
     @Builder.Default
     private List<Review> reviews = new ArrayList<>();
 

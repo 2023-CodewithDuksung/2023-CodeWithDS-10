@@ -33,9 +33,13 @@ public class MenuService {
         return menus.stream()
                 .map(menu -> {
                     MenuDTO menuDTO = new MenuDTO();
+                    menuDTO.setMenuId(menu.getMenuId());
                     menuDTO.setName(menu.getName());
                     menuDTO.setPrice(menu.getPrice());
                     menuDTO.setTime(menu.getTime());
+                    menuDTO.setMenuStatus(menu.getMenuStatus());
+                    menuDTO.setStore(menu.getStore().getStoreId());
+                    menuDTO.setCnt(menu.getCnt());
                     return menuDTO;
                 })
                 .collect(Collectors.toList());
@@ -47,13 +51,18 @@ public class MenuService {
         return menus.stream()
                 .map(menu -> {
                     MenuDTO menuDTO = new MenuDTO();
+                    menuDTO.setMenuId(menu.getMenuId());
                     menuDTO.setName(menu.getName());
                     menuDTO.setPrice(menu.getPrice());
+                    menuDTO.setStore(menu.getStore().getStoreId());
                     menuDTO.setCnt(menu.getCnt());
                     menuDTO.setContent(menu.getContent());
                     menuDTO.setAllergicIng(menu.getAllergicIng());
                     menuDTO.setOriginIng(menu.getOriginIng());
                     menuDTO.setTime(menu.getTime());
+                    menuDTO.setMenuStatus(menu.getMenuStatus());
+                    menuDTO.setRating(menu.getRating());
+                    menuDTO.setImageUrl(menu.getImageUrl());
 
                     return menuDTO;
                 })
@@ -76,6 +85,11 @@ public class MenuService {
     // menu 삭제
     public void deleteMenu(int menuId) {
         menuRepository.deleteById(menuId);
+    }
+
+    public Menu findMenuByName(String name){
+        return menuRepository.findByName(name)
+                .orElseThrow(() -> new RuntimeException("찾는 메뉴가 없습니다: " + name));
     }
 
 }
