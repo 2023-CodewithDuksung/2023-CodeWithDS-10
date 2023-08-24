@@ -1,6 +1,7 @@
 package com.dukbab.controller;
 
 import com.dukbab.dto.MenuDTO;
+import com.dukbab.dto.MenuRequestDto;
 import com.dukbab.service.MenuService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,14 +20,14 @@ public class MenuController {
     }
     // 모든 메뉴 정보 조회
     @GetMapping
-    public List<MenuDTO> getAllMenus(){
-        return menuService.getAllMenuDTOs();
+    public MenuRequestDto getAllMenus(){
+        return menuService.getAllMenusAndUserNickname();
     }
 
     // 특정 메뉴의 상세 정보를 조회
     @GetMapping("/{menuId}")
-    public List<MenuDTO> getMenuDetail(@PathVariable int menuId) {
-        return menuService.getDetailMenuDTOs(menuId);
+    public MenuRequestDto getMenuDetail(@PathVariable int menuId) {
+        return menuService.getDetailsMenuAndUserNickname(menuId);
     }
 
 
