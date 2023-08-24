@@ -17,7 +17,9 @@ public class OrderController {
 
     @PostMapping("/order")
     public ResponseEntity<String> createOrder(@RequestBody OrderRequestDto orderRequestDto){
-        return ResponseEntity.ok(String.valueOf(orderService.createOrder(orderRequestDto)));
+        int waitingNumber = orderService.createOrder(orderRequestDto);
+        if(waitingNumber == 10000) ResponseEntity.ok("품절된 메뉴거나 주문 불가능한 메뉴가 있어 주문 접수가 되지 않았습니다.");
+        return ResponseEntity.ok(String.valueOf(waitingNumber));
     }
 
 }
