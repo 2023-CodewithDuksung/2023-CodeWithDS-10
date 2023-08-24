@@ -27,6 +27,8 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final MemberRepository memberRepository;
+
+    private final MenuRepository menuRepository;
     private final MenuService menuService;
     private int waitingNumber = 0; // 대기 번호
 
@@ -96,6 +98,13 @@ public class OrderService {
             return 2; // 주문 접수는 될 것이고, 메뉴가 품절 상태로 바뀜.
         }else{
             return 3; // 주문 접수가 되지 않을 것이고, 메뉴가 품절 상태로 바뀌지 않음.
+        }
+    }
+
+    @Scheduled(cron = "0 0 0 * * ?") // 매일 자정에 실행, 매일 초기화해 줌.
+    public void resetMenuCount(){
+        for(Menu menu: menuRepository.findAll()){
+            menu.setCnt(0);
         }
     }
 
