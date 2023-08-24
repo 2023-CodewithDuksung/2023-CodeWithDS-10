@@ -1,19 +1,18 @@
-import { Link } from "react-router-dom";
 import styles from "./cart.module.css";
 import { CartHeader } from "./cartHeader";
 import { CartList } from "./cartList";
 import { TotalCart } from "./totalCart";
 import { useState } from "react";
 
-import Headers from "../Headers/Headers";
+import Headers from "../../Headers/Headers";
 
-export default function Cart({
+export const Cart = ({
   cart,
   setCart,
   convertPrice,
   checkLists,
   setCheckLists,
-}) {
+}) => {
   //장바구니 가격
   const [total, setTotal] = useState(0);
 
@@ -105,18 +104,14 @@ export default function Cart({
       {cart.length === 0 ? (
         ""
       ) : (
-        <>
-          <TotalCart
-            total={total}
-            setTotal={setTotal}
-            cart={cart}
-            found={found}
-          />
-          <Link to="/buy" total={total} checkLists={checkLists}>
-            <button>결제하기</button>
-          </Link>
-        </>
+        <TotalCart
+          total={total}
+          setTotal={setTotal}
+          cart={cart}
+          found={found}
+          convertPrice={convertPrice}
+        ></TotalCart>
       )}
     </>
   );
-}
+};

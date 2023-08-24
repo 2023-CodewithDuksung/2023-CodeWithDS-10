@@ -9,6 +9,7 @@ import styled from "styled-components";
 import circle_g from "../img/circle_green.jpg";
 import { getMenus } from "../Service/fetcher.js";
 import "./Tab.css";
+import Headers from "../Headers/Headers.js";
 
 // Styled-Component 라이브러리를 활용해 TabMenu 와 Desc 컴포넌트의 CSS를 구현.
 
