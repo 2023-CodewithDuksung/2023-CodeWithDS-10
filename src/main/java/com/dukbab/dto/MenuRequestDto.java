@@ -14,7 +14,8 @@ import java.util.List;
 public class MenuRequestDto {
 
     private String nickname;
-
+   // private StoreIsOpenDto storeIsOpen;
+    private List<StoreDto> storeDtoList;
     private List<MenuDTO> menuDTOList;
 
 }
