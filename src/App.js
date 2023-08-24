@@ -6,6 +6,7 @@ import Cart from "./Cart/Cart.js";
 import Review from "./Review/Review.js";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { useState } from "react";
+import Buy from "./Buy/Buy.js";
 
 function App() {
   //메뉴 리스트
@@ -24,7 +25,8 @@ function App() {
             <Route path = '/:title' element={<Detail cart={cart} setCart={setCart}/>}/>
             <Route path = '/mypage' element={<MyPage/>}/>
             <Route path = '/cart' element={<Cart cart={cart} setCart={setCart} checkLists={checkLists} setCheckLists={setCheckLists}/>}/>
-            <Route path = '/review' element={<Review/>}/>
+            <Route path = '/:title/review' element={<Review menus={menus}/>}/>
+            <Route path = '/buy' element={<Buy cart={cart}></Buy>}></Route>
           </Routes>
         </BrowserRouter>
   );

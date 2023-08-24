@@ -120,9 +120,11 @@ const Detail = ({cart, setCart}) => {
                         <div className='btn_cart' onClick={()=>{openModal();handleCart();}}>
                             장바구니
                         </div>
+                    <Link to='/buy'>
                         <div className='btn_purchase'>
                             결제
                         </div>
+                    </Link>
                     </div>
                 </div>
             </div>
@@ -137,7 +139,7 @@ const Detail = ({cart, setCart}) => {
                     <img src={star} alt='별점' width='30px' height='30px'></img>
                     <img src={star} alt='별점' width='30px' height='30px'></img>
                 </div>
-                <Link to='/review'>
+                <Link to={`/${menu.title}/review`}>
                     <img src={btn_review} alt='리뷰버튼' width='145px' height='45px'></img>
                 </Link>
             </div>
