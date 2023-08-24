@@ -12,6 +12,7 @@ import java.util.List;
 @Builder
 public class MyPageDto {
     // 마이페이지 내용 보일 때 쓰이는 Dto
+    // 결제 수단 집어 넣어야 함.
 
     private String email;
     private String nickname;

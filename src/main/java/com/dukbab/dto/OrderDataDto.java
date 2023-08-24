@@ -17,6 +17,7 @@ public class OrderDataDto {
     private int totalPrice;
     private int waitingNumber;
     private Date createdDate;
+    private String paymentMethod;
     private List<OrderItemDto> orderItemDtoList;
 
 }
