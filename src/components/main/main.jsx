@@ -1,5 +1,4 @@
 import styles from "./main.module.css";
-import { EventBanner } from "../eventBanner/eventBanner";
 import { Product } from "../products/product";
 import { useEffect } from "react";
 import { getProducts } from "../../service/fetcher";
@@ -29,7 +28,7 @@ const sortProduct = (type) => {
 }
   return (
     <>
-      <EventBanner />
+      
       <div className={styles.filter}>
         <p onClick={()=> sortProduct("recent")}>최신순</p>
         <p onClick={()=> sortProduct("row")}>낮은 가격</p>
@@ -44,4 +43,4 @@ const sortProduct = (type) => {
     </>
   );
 };
-  
+  //<EventBanner /> : 덕성 로고가 있는 사진 삭제 ! 

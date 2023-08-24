@@ -10,9 +10,10 @@ export const CartHeader =({handleAllCheck, isAllChecked}) =>{
           checked ={isAllChecked}
           
           />
-          <span>상품정보</span>
-          <br></br>
+          <span>상품</span>
+          <span>판매가</span>
           <span>수량</span>
+          
           
 
           <p>전체선택</p>

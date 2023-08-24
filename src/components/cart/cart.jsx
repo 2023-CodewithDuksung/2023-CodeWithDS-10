@@ -5,6 +5,8 @@ import { TotalCart } from "./totalCart";
 import { useState } from "react";
 
 
+
+
 export const Cart = ({cart, setCart, convertPrice, checkLists, setCheckLists }) => {
   //장바구니 가격
   const [total, setTotal] = useState(0);
@@ -70,7 +72,9 @@ export const Cart = ({cart, setCart, convertPrice, checkLists, setCheckLists }) 
 
   //장바구니에서 하나라도 체크 해제되면 전체 체크 해제
   const isAllChecked = cart.length === checkLists.length && checkLists.length !== 0;
- 
+
+
+  
   
 
   return (
@@ -109,8 +113,16 @@ export const Cart = ({cart, setCart, convertPrice, checkLists, setCheckLists }) 
       setTotal={setTotal} 
       cart={cart} 
       found ={found}
-      convertPrice={convertPrice}
-      />)}
+      convertPrice={convertPrice}>
+
+      
+      </TotalCart>
+      )}
+
+  
+      
+
+     
       
     </>
   );

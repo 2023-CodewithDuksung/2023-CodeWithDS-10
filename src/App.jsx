@@ -1,10 +1,16 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { TopNavigationBar } from "./components/header/topNavigationBar/topNavigationBar";
+import Header from "./components/header/headermark/headermark"; //{Header} 하면 import가 안된다.
 import Home from "./pages/home";
 import Product from "./pages/product";
 import Basket from "./pages/basket";
 import {useState} from "react";
+//import {PaymentButton} from "./components/cart/PaymentButton";
+
+
+
+
+
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -19,7 +25,7 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <TopNavigationBar cart={cart}/>
+      <Header cart={cart}/>
       <Routes>
         <Route path="/" element={
         <Home 
@@ -41,13 +47,27 @@ function App() {
         setCart={setCart} 
         convertPrice={convertPrice} 
         checkLists={checkLists}
-        setCheckLists={setCheckLists}
-        
+        setCheckLists={setCheckLists}      
+
         />} />
+
+        
+      
       </Routes>
+
+      
+
+      
+      
+
     </BrowserRouter>
   );
 }
 
 export default App;
  
+/*결제 페이지
+
+<Route path=""
+element={<PaymentButton 
+  handlePayment={handlePayment} />}/> */

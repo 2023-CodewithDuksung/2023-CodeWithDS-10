@@ -1,60 +1,203 @@
 {
   "products": [
     {
+      "id": 0,
+      "name": "아침메뉴",
+      "provider": "아침메뉴",
+      "price": 1000,
+      "image": "/images/item-1.jpg"
+    },
+    {
       "id": 1,
-      "name": "마로네 노트북 파우치",
-      "provider": "아이돈케어",
-      "price": 17100,
-      "image": "/images/image001.png"
+      "name": "오늘의메뉴",
+      "provider": "오늘의메뉴",
+      "price": 6500,
+      "image": "/images/item-2.jpg"
     },
     {
       "id": 2,
-      "name": "에어팟 키링",
-      "provider": "gorigory",
-      "price": 3000,
-      "image": "/images/image002.png"
+      "name": "4분돼지김치파스타",
+      "provider": "파스타치요",
+      "price": 7500,
+      "image": "/images/item-3.jpg"
     },
     {
       "id": 3,
-      "name": "폴리폴리 무릎 담요",
-      "provider": "100-QM",
-      "price": 7000,
-      "image": "/images/image003.png"
+      "name": "고기리들기름파스타",
+      "provider": "파스타치요",
+      "price": 6000,
+      "image": "/images/item-4.jpg"
     },
     {
       "id": 4,
-      "name": "아이폰 스티커 팩",
-      "provider": "문구 판매소",
-      "price": 1900,
-      "image": "/images/image004.png"
+      "name": "트러플버섯크림파스타",
+      "provider": "파스타치요",
+      "price": 6500,
+      "image": "/images/item-5.jpg"
     },
     {
       "id": 5,
-      "name": "개발자 키보드",
-      "provider": "numpy",
-      "price": 99000,
-      "image": "/images/image005.png"
+      "name": "대패삼겹크림파스타",
+      "provider": "파스타치요",
+      "price": 7500,
+      "image": "/images/item-6.jpg"
     },
     {
       "id": 6,
-      "name": "개발자 커스텀 케이블",
-      "provider": "보물보따리",
-      "price": 69000,
-      "image": "/images/image006.png"
+      "name": "매콤로제파스타",
+      "provider": "파스타치요",
+      "price": 7500,
+      "image": "/images/item-7.jpg"
     },
     {
       "id": 7,
-      "name": "문 긁는 고양이",
-      "provider": "집",
-      "price": 1000000,
-      "image": "/images/image007.png"
+      "name": "우삼겹알리오올리오파스타",
+      "provider": "파스타치요",
+      "price": 7000,
+      "image": "/images/item-8.jpg"
     },
     {
       "id": 8,
-      "name": "우당탕탕 인테리어 책",
-      "provider": "우당탕탕",
-      "price": 5900,
-      "image": "/images/image008.png"
+      "name": "직화불막창토핑추가", 
+      "provider": "파스타치요",
+      "price": 2900,
+      "image": "/images/item-9.jpg"
+    },
+    {
+      "id": 9,
+      "name": "직화불쭈꾸미토핑추가",
+      "provider": "파스타치요",
+      "price": 2900,
+      "image": "/images/item-10.jpg"
+    },
+  
+    {
+      "id": 10,
+      "name": "치킨마요덮밥",
+      "provider": "니나노덮밥",
+      "price": 7000,
+      "image": "/images/item-11.jpg"
+    },
+    {
+      "id": 11,
+      "name": "우동돈까스세트",
+      "provider": "니나노덮밥",
+      "price": 6200,
+      "image": "/images/item-12.jpg"
+    },
+    {
+      "id": 12,
+      "name": "제육덮밥",
+      "provider": "니나노덮밥",
+      "price": 6500,
+      "image": "/images/item-13.jpg"
+    },
+    {
+      "id": 13,
+      "name": "닭갈비덮밥",
+      "provider": "니나노덮밥",
+      "price": 7000,
+      "image": "/images/item-14.jpg"
+    },
+    {
+      "id": 14,
+      "name": "오므라이스",
+      "provider": "니나노덮밥",
+      "price": 7000,
+      "image": "/images/item-15.jpg"
+    },
+    {
+      "id": 15,
+      "name": "불닭마요덮밥",
+      "provider": "니나노덮밥",
+      "price": 6500,
+      "image": "/images/item-16.jpg"
+    },
+  
+    {
+      "id": 16,
+      "name": "제주흑돼지돈까스",
+      "provider": "일식/양식",
+      "price": 6000,
+      "image": "/images/item-17.jpg"
+    },
+    {
+      "id": 17,
+      "name": "탄탄면",
+      "provider": "일식/양식",
+      "price": 6500,
+      "image": "/images/item-18.jpg"
+    },
+    {
+      "id": 18,
+      "name": "냉모밀",
+      "provider": "일식/양식",
+      "price": 6500,
+      "image": "/images/item-19.jpg"
+    },
+    {
+      "id": 19,
+      "name": "카레밥",
+      "provider": "일식/양식",
+      "price": 4500,
+      "image": "/images/item-20.jpg"
+    },
+    {
+      "id": 20,
+      "name": "아메리카노",
+      "provider": "샌드위치카페",
+      "price": 2000,
+      "image": "/images/item-21.jpg"
+    },
+    {
+      "id": 21,
+      "name": "카페라떼",
+      "provider": "샌드위치카페",
+      "price": 2900,
+      "image": "/images/item-22.jpg"
+    },
+    {
+      "id": 22,
+      "name": "카페모카",
+      "provider": "샌드위치카페",
+      "price": 3200,
+      "image": "/images/item-23.jpg"
+    },
+    {
+      "id": 23,
+      "name": "돌체라떼",
+      "provider": "샌드위치카페",
+      "price": 3200,
+      "image": "/images/item-24.jpg"
+    },
+    {
+      "id": 24,
+      "name": "복숭아아이스티",
+      "provider": "샌드위치카페",
+      "price": 2300,
+      "image": "/images/item-25.jpg"
+    },
+    {
+      "id": 25,
+      "name": "아샷추",
+      "provider": "샌드위치카페",
+      "price": 2800,
+      "image": "/images/item-26.jpg"
+    },
+    {
+      "id": 26,
+      "name": "햄치즈토스트",
+      "provider": "토스트",
+      "price": 3900,
+      "image": "/images/item-27.jpg"
+    },
+    {
+      "id": 27,
+      "name": "에그토스트",
+      "provider": "토스트",
+      "price": 3900,
+      "image": "/images/item-28.jpg"
     }
+    
   ]
 }

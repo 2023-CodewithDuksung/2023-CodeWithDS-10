@@ -23,12 +23,14 @@ export const CartList =({
                               
       <div className={styles.cart_product_info}>
         <p className={styles.seller_store}>{cart.provider}</p>
-        <p className={styles.product_name}>{cart.name}</p>
-        <p className={styles.price}>{convertPrice(cart.price)}원</p>  
+        <p className={styles.product_name}>{cart.name}</p>  
         
       </div>
+      <div className={styles.cart_product_info}>
+        <p className={styles.price}>{convertPrice(cart.price)}원</p>
+      </div>
     </div>
-    <br></br>
+    
 
     <div className={styles.cart_product_count}>
       <img
