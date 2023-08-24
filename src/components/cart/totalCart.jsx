@@ -1,10 +1,12 @@
+import React, { useState, useEffect } from 'react';
 import styles from "./cart.module.css";
-import {useEffect} from "react";
 import { Link } from 'react-router-dom';
 
+export const TotalCart = ({ total, setTotal, cart, found, convertPrice }) => {
+  const [selectedOption, setSelectedOption] = useState(null);
 
+  
 
-export const TotalCart =({total, setTotal, cart, found, convertPrice}) =>{
 
   //total금액 계산
   useEffect(()=>{
@@ -46,6 +48,7 @@ export const TotalCart =({total, setTotal, cart, found, convertPrice}) =>{
             <p className={styles.cart_product_sale_price}></p>
           </div>
           <br></br> 
+          
     
     
     <div className={styles.payment}>

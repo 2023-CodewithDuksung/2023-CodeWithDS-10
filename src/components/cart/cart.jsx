@@ -75,7 +75,6 @@ export const Cart = ({cart, setCart, convertPrice, checkLists, setCheckLists }) 
 
 
   
-  
 
   return (
     <>
