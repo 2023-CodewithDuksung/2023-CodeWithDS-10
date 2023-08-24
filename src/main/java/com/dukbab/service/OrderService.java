@@ -4,10 +4,7 @@ import com.dukbab.configuration.SecurityUtil;
 import com.dukbab.domain.*;
 import com.dukbab.dto.OrderItemRequestDto;
 import com.dukbab.dto.OrderRequestDto;
-import com.dukbab.repository.MemberRepository;
-import com.dukbab.repository.MenuRepository;
-import com.dukbab.repository.OrderItemRepository;
-import com.dukbab.repository.OrderRepository;
+import com.dukbab.repository.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -27,11 +24,13 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final MemberRepository memberRepository;
+    private final StoreRepository storeRepository;
 
     private final MenuRepository menuRepository;
     private final MenuService menuService;
     private int waitingNumber = 0; // 대기 번호
 
+    @Transactional
     @Scheduled(cron = "0 0 0 * * ?") // 매일 자정에 실행, 매일 초기화해 줌.
     public void resetWaitingNumber(){
         waitingNumber = 0;
@@ -101,11 +100,14 @@ public class OrderService {
         }
     }
 
+    @Transactional
     @Scheduled(cron = "0 0 0 * * ?") // 매일 자정에 실행, 매일 초기화해 줌.
     public void resetMenuCount(){
         for(Menu menu: menuRepository.findAll()){
             menu.setCnt(0);
         }
     }
+
+
 
 }
