@@ -41,13 +41,14 @@ public class Member {
 
     private Date createdDate; // 생성 날짜 - 이거 빼도 되지 않을까요??
 
-    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
+
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) // 양방향 관계
     @Builder.Default
     private List<Order> orders = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL) // 양방향 관계
-    @Builder.Default
-    private List<Cart> carts = new ArrayList<>();
+    @OneToOne(mappedBy = "member") // 카트 하나 보유
+    private Cart cart;
+
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL) // 양방향 관계
     @Builder.Default

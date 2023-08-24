@@ -22,11 +22,13 @@ public class MenuService {
         this.menuRepository = menuRepository;
     }
 
-    // 전체 메뉴
+    // 모든 메뉴 조회
     public List<Menu> getAllMenus(){
         return menuRepository.findAll();
     }
 
+
+    // 모든 메뉴 정보를 DTO 형식으로 조회
     public List<MenuDTO> getAllMenuDTOs() {
         List<Menu> menus = menuRepository.findAll();
         return menus.stream()
@@ -42,6 +44,7 @@ public class MenuService {
 
     public List<MenuDTO> getDetailMenuDTOs(int menuId) {
         Optional<Menu> menus = menuRepository.findById(menuId);
+
         return menus.stream()
                 .map(menu -> {
                     MenuDTO menuDTO = new MenuDTO();

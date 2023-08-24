@@ -1,11 +1,13 @@
 package com.dukbab.domain;
 
 import ch.qos.logback.core.status.Status;
+
 import lombok.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import java.util.List;
 public class Menu {
 
     @Id
+    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int menuId;     // 메뉴 id
 
@@ -35,7 +38,6 @@ public class Menu {
     private String name;    // 메뉴 이름
 
     private String imageUrl;    // 메뉴 이미지 URL
-
 
     private int price;  // 메뉴 가격
 
@@ -57,11 +59,11 @@ public class Menu {
     @OneToMany(mappedBy = "menu", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
+    @OneToMany(mappedBy = "menu", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // 양방향 관계
     private List<Review> reviews = new ArrayList<>();
 
     // 테스트 코드
-    public Menu(Store store, menuStatus menuStatus, String name, String imageUrl, int price, String originIng, String allergicIng, int time, double avgRating, String content, int cnt){
+    public Menu(Store store, menuStatus menuStatus, String name, String imageUrl, int price, String originIng, String allergicIng, int time, double rating, String content, int cnt){
         this.store = store;
         this.menuStatus = menuStatus;
         this.name = name;
@@ -70,12 +72,19 @@ public class Menu {
         this.originIng = originIng;
         this.allergicIng = allergicIng;
         this.time = time;
-        this.rating = avgRating;
+        this.rating = rating;
         this.content = content;
         this.cnt = cnt;
     }
 
 
+    public int getId() {
+        return menuId;
+    }
 
+    public void setId(int menuId){
+        this.menuId = menuId;
+
+    }
 }
 

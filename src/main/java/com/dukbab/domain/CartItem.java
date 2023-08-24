@@ -1,19 +1,19 @@
 package com.dukbab.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.awt.*;
-
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="CartItem")
 @Getter
 @Setter
 public class CartItem {
 
-  
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name="cartItemId")
@@ -30,6 +30,14 @@ public class CartItem {
     private Menu menu;      // 메뉴 id
 
     private int menuCnt;    // 각 메뉴 수량
+
+    public static CartItem createCartItem(Cart cart, Menu menu,int menuCnt){
+        CartItem cartItem = new CartItem();
+        cartItem.setCart(cart);
+        cartItem.setMenu(menu);
+        cartItem.setMenuCnt(menuCnt);
+        return cartItem;
+    }
 
 
 }
