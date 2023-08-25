@@ -25,7 +25,7 @@
     }
 
     .food_price {
-      width: 116px;
+      width: 150px;
       height: 46px;
       font-weight: bold;
       margin: 0;
@@ -35,13 +35,13 @@
     }
 
     .food_ingr {
-      width: 650px;
+      width: 680px;
       height: 110px;
       border-bottom: 1px solid #aaaaaa;
     }
 
     .food_ingr > p {
-      width: 127px;
+      width: 150px;
       height: 27px;
       font-size: 20px;
       font-weight: bold;
@@ -91,7 +91,7 @@
     .quantity > p {
       padding: 25px;
       margin: 17px;
-      width: 87px;
+      width: 100px;
       height: 27px;
       margin: 10;
     }
@@ -242,7 +242,7 @@
   }
 
   .review > p {
-    width: 127px;
+    width: 140px;
     height: 20px;
     margin-top: 30px;
     margin-bottom: 12px;

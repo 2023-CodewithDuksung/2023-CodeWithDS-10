@@ -18,12 +18,11 @@ export const CartList = ({
       />
       <div className={styles.cart_product_wrap}>
         <div className={styles.cart_product_image}>
-          <img src={cart.image} alt="product-img" />
+          <img src={process.env.PUBLIC_URL + cart.img} alt="menu-img" />
         </div>
-
         <div className={styles.cart_product_info}>
           <p className={styles.seller_store}>{cart.provider}</p>
-          <p className={styles.product_name}>{cart.name}</p>
+          <p className={styles.product_name}>{cart.title}</p>
           <p className={styles.price}>
             {parseInt(cart.price) * cart.quantity}원
           </p>
@@ -51,7 +50,7 @@ export const CartList = ({
 
       <div className={styles.cart_product_price}>
         <p className={styles.total_price}></p>
-        <button className={styles.btn_submit}>주문하기</button>
+        <p className={styles.price}>{parseInt(cart.price) * cart.quantity}원</p>
       </div>
 
       <div

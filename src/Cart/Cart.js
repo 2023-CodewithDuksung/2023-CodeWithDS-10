@@ -29,7 +29,7 @@ export default function Cart({
 
     const cartItem = {
       id: found.id,
-      image: found.image,
+      img: process.env.PUBLIC_URL + found.img,
       name: found.name,
       price: found.price,
       quantity: quantity,

@@ -42,10 +42,8 @@ export default function Headers() {
                     width="45.95px"
                     height="45.95px"
                   ></img>
-                  <a className="nick" href="#!">
-                    {user.userId}
-                  </a>
-                  <span>님</span>
+                  <a className="nick" href="#!"></a>
+                  <span>덕밥이님</span>
                   <Link to={`/`} className="btn_login" onClick={handleLogout}>
                     로그아웃
                   </Link>
